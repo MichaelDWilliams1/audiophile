@@ -1,10 +1,12 @@
 import Navbar from './components/Navbar'
-import Header from './components/Header'
+
+import Home from './pages/Home'
 function App() {
   return (
-    <div className="align h-screen  border-solid border-2 border-sky-500">
+    <div className="align h-screen">
       <Navbar />
-      <Header />
+     
+      <Home />
     </div>
   );
 }

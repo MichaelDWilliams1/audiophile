@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.hr{
-    border: 4px solid white;
+.headerBackground{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/audiophile-ecommerce-e6a79.appspot.com/o/assests%2Fhome%2Fdesktop%2Fimage-hero.jpg?alt=media&token=a8515aaa-0b65-44e7-bbdb-f12af6f98744');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 90% 10%;
+}
+
+.backgroundSvg{
+   background-image: url('./assets/pattern-circles.svg');
+   background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.backgroundImage{
+    background-image: url('./assets/image-speaker-zx7.jpg');
+    background-repeat: none;
+    background-size: 100% 100%;
 }

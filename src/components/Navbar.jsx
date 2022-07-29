@@ -13,7 +13,7 @@ const Navbar = () => {
                     <li>EARPHONES</li>
                 </ul>
             </div>
-        <div className='flex justify-end items-center text-4xl  w-1/6'><i class="uil uil-shopping-cart"></i></div>
+        <div className='flex justify-end items-center text-4xl  w-1/6'><i className="uil uil-shopping-cart"></i></div>
        
         </nav>
         
