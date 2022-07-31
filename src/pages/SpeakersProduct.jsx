@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { SiteDataContext } from "../context/useSiteData";
 import Thumbnail from "../components/Thumbnail";
 import BestGear from "../components/BestGear";
+import { Link } from 'react-router-dom'
 
 const SpeakersProduct = () => {
     const {siteData} = useContext(SiteDataContext)
@@ -30,7 +31,7 @@ const SpeakersProduct = () => {
                     <div>
                         <p className="text-md">Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.</p>
                     </div>
-                    <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button>
+                   <Link to='/zx9'> <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>
            </div>
         </div>
@@ -44,7 +45,7 @@ const SpeakersProduct = () => {
                     <div>
                         <p className="text-md">Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.</p>
                     </div>
-                    <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button>
+                   <Link to='/zx7'><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link> 
                 </div>
             </div>
             <div className=" w-1/2 h-full">

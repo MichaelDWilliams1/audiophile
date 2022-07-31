@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { SiteDataContext } from "../context/useSiteData";
 import Thumbnail from "../components/Thumbnail";
 import BestGear from "../components/BestGear";
+import { Link } from  'react-router-dom'
 const EarphoneProduct = () => {
     const {siteData} = useContext(SiteDataContext)
   return (
@@ -29,7 +30,7 @@ const EarphoneProduct = () => {
                     <div>
                         <p className="text-md">Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.</p>
                     </div>
-                    <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button>
+                   <Link to='/yx1'><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>
            </div>
         </div>

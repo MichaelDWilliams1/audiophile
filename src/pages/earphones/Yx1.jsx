@@ -4,7 +4,7 @@ import { SiteDataContext } from "../../context/useSiteData";
 import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
 
-const MarkII = () => {
+const Yx1 = () => {
   const { siteData } = useContext(SiteDataContext);
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const MarkII = () => {
           <div className=" w-1/2 h-full">
             <img
               className="h-full w-full"
-              src={siteData[0]?.product[3]?.image.desktop}
+              src={siteData[0]?.product[0]?.image.desktop}
             />
           </div>
           <div className=" flex justify-end items-center w-1/2 h-100">
@@ -38,18 +38,14 @@ const MarkII = () => {
                 <div className="text-zinc-500">P R O D U C T</div>
               </div>
               <div className="">
-                <div className="text-5xl">XX99 MARK II</div>
-                <div className="text-5xl">HEADPHONES</div>
+                <div className="text-5xl">YX1 WIRELESS</div>
+                <div className="text-5xl">EARPHONES</div>
               </div>
               <div>
                 <p className="text-md">
-                  The new XX99 Mark II headphones is the pinnacle of pristine
-                  audio. It redefines your premium headphone experience by
-                  reproducing the balanced depth and precision of studio-quality
-                  sound.
-                </p>
+                Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.                </p>
               </div>
-              <p className="font-bold">{`$ ${siteData[0]?.product[3]?.price.toLocaleString()}`}</p>
+              <p className="font-bold">{`$ ${siteData[0]?.product[0]?.price.toLocaleString()}`}</p>
               <div className="flex">
                 <div className="bg-gray-200 h-20 w-2/6 flex items-center text-center mr-10">
                   {/* Need to add some state here */}
@@ -58,7 +54,7 @@ const MarkII = () => {
                   <div className="w-1/3">+</div>
                 </div>
                 <button
-                  id={siteData[0]?.product[3]?.price}
+                  id={siteData[0]?.product[0]?.price}
                   className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200"
                 >
                   ADD TO CART
@@ -74,22 +70,9 @@ const MarkII = () => {
             <div className="w-5/6 h-full flex flex-col justify-between">
               <div className="text-5xl font-bold">Features</div>
               <div className="leading-7">
-                Featuring a genuine leather head strap and premium earcups,
-                these headphones deliver superior comfort for those who like to
-                enjoy endless listening. It includes intuitive controls designed
-                for any situation. Whether you’re taking a business call or just
-                in your own personal space, the auto on/off and pause features
-                ensure that you’ll never miss a beat.
-              </div>
+              Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.              </div>
               <div className="leading-7">
-                The advanced Active Noise Cancellation with built-in equalizer
-                allow you to experience your audio world on your terms. It lets
-                you enjoy your audio in peace, but quickly interact with your
-                surroundings when you need to. Combined with Bluetooth 5. 0
-                compliant connectivity and 17 hour battery life, the XX99 Mark
-                II headphones gives you superior sound, cutting-edge technology,
-                and a modern design aesthetic.
-              </div>
+              The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.              </div>
             </div>
           </div>
           <div className=" flex justify-end w-2/6 h-full">
@@ -97,12 +80,12 @@ const MarkII = () => {
               <div className="text-5xl font-bold">IN THE BOX</div>
               <div className=" h-full w-full mt-10 leading-10">
                 <tr>
-                  <td className="w-1/4 text-orange-600 font-bold">1x</td>
-                  <td className="w-3/4">Headphone Unit</td>
+                  <td className="w-1/4 text-orange-600 font-bold">2x</td>
+                  <td className="w-3/4">Earphone Unit</td>
                 </tr>
                 <tr>
-                  <td className="w-1/4 text-orange-600 font-bold">2x</td>
-                  <td className="w-3/4">Replacement Earcups</td>
+                  <td className="w-1/4 text-orange-600 font-bold">6x</td>
+                  <td className="w-3/4">Multi-size Earplugs</td>
                 </tr>
                 <tr>
                   <td className="w-1/4 text-orange-600 font-bold">1x</td>
@@ -110,11 +93,11 @@ const MarkII = () => {
                 </tr>
                 <tr>
                   <td className="w-1/4 text-orange-600 font-bold">1x</td>
-                  <td className="w-3/4">3.5mm 5m Audio Cable</td>
+                  <td className="w-3/4">USB-C Charging Cable</td>
                 </tr>
                 <tr>
                   <td className="w-1/4 text-orange-600 font-bold">1x</td>
-                  <td className="w-3/4">Travel Bag</td>
+                  <td className="w-3/4">Travel Pouch</td>
                 </tr>
               </div>
             </div>
@@ -127,20 +110,20 @@ const MarkII = () => {
             <div className="imageContainer rounded-xl">
               <img
                 className="h-full w-full rounded-xl"
-                src={siteData[0]?.product[3]?.gallery.first.desktop}
+                src={siteData[0]?.product[0]?.gallery.first.desktop}
               />
             </div>
             <div className="imageContainer">
               <img
                 className="h-full w-full rounded-xl"
-                src={siteData[0]?.product[3]?.gallery.second.desktop}
+                src={siteData[0]?.product[0]?.gallery.second.desktop}
               />
             </div>
           </div>
           <div className="h-full w-7/12">
             <img
               className="h-full w-full rounded-xl"
-              src={siteData[0]?.product[3]?.gallery.third.desktop}
+              src={siteData[0]?.product[0]?.gallery.third.desktop}
             />
           </div>
         </div>
@@ -185,4 +168,4 @@ const MarkII = () => {
   );
 };
 
-export default MarkII;
+export default Yx1;

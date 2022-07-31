@@ -4,7 +4,7 @@ import { SiteDataContext } from "../../context/useSiteData";
 import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
 
-const MarkII = () => {
+const MarkI = () => {
   const { siteData } = useContext(SiteDataContext);
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const MarkII = () => {
           <div className=" w-1/2 h-full">
             <img
               className="h-full w-full"
-              src={siteData[0]?.product[3]?.image.desktop}
+              src={siteData[0]?.product[2]?.image.desktop}
             />
           </div>
           <div className=" flex justify-end items-center w-1/2 h-100">
@@ -38,18 +38,15 @@ const MarkII = () => {
                 <div className="text-zinc-500">P R O D U C T</div>
               </div>
               <div className="">
-                <div className="text-5xl">XX99 MARK II</div>
+                <div className="text-5xl">XX99 MARK I</div>
                 <div className="text-5xl">HEADPHONES</div>
               </div>
               <div>
                 <p className="text-md">
-                  The new XX99 Mark II headphones is the pinnacle of pristine
-                  audio. It redefines your premium headphone experience by
-                  reproducing the balanced depth and precision of studio-quality
-                  sound.
+                As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. 
                 </p>
               </div>
-              <p className="font-bold">{`$ ${siteData[0]?.product[3]?.price.toLocaleString()}`}</p>
+              <p className="font-bold">{`$ ${siteData[0]?.product[2]?.price.toLocaleString()}`}</p>
               <div className="flex">
                 <div className="bg-gray-200 h-20 w-2/6 flex items-center text-center mr-10">
                   {/* Need to add some state here */}
@@ -74,21 +71,10 @@ const MarkII = () => {
             <div className="w-5/6 h-full flex flex-col justify-between">
               <div className="text-5xl font-bold">Features</div>
               <div className="leading-7">
-                Featuring a genuine leather head strap and premium earcups,
-                these headphones deliver superior comfort for those who like to
-                enjoy endless listening. It includes intuitive controls designed
-                for any situation. Whether you’re taking a business call or just
-                in your own personal space, the auto on/off and pause features
-                ensure that you’ll never miss a beat.
+              As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.
               </div>
               <div className="leading-7">
-                The advanced Active Noise Cancellation with built-in equalizer
-                allow you to experience your audio world on your terms. It lets
-                you enjoy your audio in peace, but quickly interact with your
-                surroundings when you need to. Combined with Bluetooth 5. 0
-                compliant connectivity and 17 hour battery life, the XX99 Mark
-                II headphones gives you superior sound, cutting-edge technology,
-                and a modern design aesthetic.
+              From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.
               </div>
             </div>
           </div>
@@ -112,10 +98,7 @@ const MarkII = () => {
                   <td className="w-1/4 text-orange-600 font-bold">1x</td>
                   <td className="w-3/4">3.5mm 5m Audio Cable</td>
                 </tr>
-                <tr>
-                  <td className="w-1/4 text-orange-600 font-bold">1x</td>
-                  <td className="w-3/4">Travel Bag</td>
-                </tr>
+                
               </div>
             </div>
           </div>
@@ -127,20 +110,20 @@ const MarkII = () => {
             <div className="imageContainer rounded-xl">
               <img
                 className="h-full w-full rounded-xl"
-                src={siteData[0]?.product[3]?.gallery.first.desktop}
+                src={siteData[0]?.product[2]?.gallery.first.desktop}
               />
             </div>
             <div className="imageContainer">
               <img
                 className="h-full w-full rounded-xl"
-                src={siteData[0]?.product[3]?.gallery.second.desktop}
+                src={siteData[0]?.product[2]?.gallery.second.desktop}
               />
             </div>
           </div>
           <div className="h-full w-7/12">
             <img
               className="h-full w-full rounded-xl"
-              src={siteData[0]?.product[3]?.gallery.third.desktop}
+              src={siteData[0]?.product[2]?.gallery.third.desktop}
             />
           </div>
         </div>
@@ -185,4 +168,4 @@ const MarkII = () => {
   );
 };
 
-export default MarkII;
+export default MarkI;

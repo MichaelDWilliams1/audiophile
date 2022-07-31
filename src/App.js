@@ -7,6 +7,13 @@ import EarphoneProduct from './pages/EarphoneProduct';
 import HeadphonesProduct from './pages/HeadphonesProduct'
 import SpeakersProduct from './pages/SpeakersProduct'
 import MarkII from './pages/headphones/MarkII'
+import MarkI from './pages/headphones/MarkI'
+import Xx59 from './pages/headphones/Xx59'
+import GoToTop from './assets/GoToTop'
+import Zx9 from './pages/speakers/Zx9'
+import Zx7 from './pages/speakers/Zx7'
+import Yx1 from './pages/earphones/Yx1'
+
 function App() {
   return (
     <div className="align h-screen">
@@ -17,7 +24,13 @@ function App() {
         <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
         <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
         <Route path='/xx99m2' element={<MarkII />}></Route>
+        <Route path='/xx99m1' element={<MarkI />}></Route>
+        <Route path='/xx59' element={<Xx59 />}></Route>
+        <Route path='/zx9' element={<Zx9 />}></Route>
+        <Route path='/zx7' element={<Zx7 />}></Route>
+        <Route path='/yx1' element={<Yx1 />}></Route>
       </Routes>
+      <GoToTop />
       
 <Footer />
     </div>
