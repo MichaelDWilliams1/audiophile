@@ -13,6 +13,7 @@ import GoToTop from './assets/GoToTop'
 import Zx9 from './pages/speakers/Zx9'
 import Zx7 from './pages/speakers/Zx7'
 import Yx1 from './pages/earphones/Yx1'
+import Profile from './pages/ProfilePages/Profile'
 // import SignIn from './pages/authentication/SignIn'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/zx9' element={<Zx9 />}></Route>
         <Route path='/zx7' element={<Zx7 />}></Route>
         <Route path='/yx1' element={<Yx1 />}></Route>
+        <Route path='/profile' element={<Profile />}></Route>
         {/* <Route path='/signinpage' element={<SignIn />}></Route> */}
       </Routes>
       <GoToTop />

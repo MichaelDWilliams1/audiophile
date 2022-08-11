@@ -5,7 +5,7 @@ import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
 
 const MarkII = () => {
-  const { siteData } = useContext(SiteDataContext);
+  const { siteData, addToCart } = useContext(SiteDataContext);
 
   const navigate = useNavigate();
 
@@ -58,6 +58,7 @@ const MarkII = () => {
                   <div className="w-1/3">+</div>
                 </div>
                 <button
+                onClick={() => addToCart(siteData[0]?.product[3])}
                   id={siteData[0]?.product[3]?.price}
                   className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200"
                 >

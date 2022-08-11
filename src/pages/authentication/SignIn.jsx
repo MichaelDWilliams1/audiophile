@@ -6,9 +6,10 @@ const SignIn = ({modalPopUp}) => {
     const [hasAccount, setHasAccount] = useState(true)
     const [newUser, setNewUser] = useState(
         {
+            name: '',
             email: '',
             password: '',
-            matchPassword: ''
+           
         }
     )
         const [returningUser, setReturningUser] = useState(
@@ -18,8 +19,14 @@ const SignIn = ({modalPopUp}) => {
             }
         )
 
+        const { newUserRegistation, login } = useContext(SiteDataContext)
+
         const onChange = (event) => {
             setNewUser(prev => ({
+                ...prev,
+                [event.target.id]: event.target.value
+            }))
+            setReturningUser(prev => ({
                 ...prev,
                 [event.target.id]: event.target.value
             }))
@@ -38,18 +45,25 @@ const SignIn = ({modalPopUp}) => {
                             <div className='text-zinc-800'>Login:</div>
                             <div className='flex flex-col items-center'>
                             <div className='text-2xl font-bold text-zinc-800  w-3/4'>EMAIL</div>
-                            <input className='w-3/4 border-2 border-black rounded-lg pl-2' 
+                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700' 
                              placeholder='user@gmail.com'
-
+                             id='email'
+                            type='text'
+                            value={returningUser.email}
+                            onChange={onChange}
                             />
                             </div>
                             <div className='flex flex-col items-center'>
                             <div className='text-2xl font-bold text-zinc-800  w-3/4'>PASSWORD</div>
-                            <input className='w-3/4 border-2 border-black rounded-lg pl-2'
+                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700'
                              placeholder='Password123'
+                             id='password'
+                             type='text'
+                             value={returningUser.password}
+                             onChange={onChange}
                             />
                             </div>
-                            <button className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
+                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), login(e, returningUser.email, returningUser.password))} className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
                             <div>
                                 <p className='text-zinc-800'>Dont have an account?</p>
                                 <p  className='text-zinc-800'>Create one <span onClick={toggleSignIn} className='underline text-orange-500'>here</span></p>
@@ -63,6 +77,16 @@ const SignIn = ({modalPopUp}) => {
                     <div className=' h-1/2 w-1/5 flex justify-center items-center m-auto rounded-lg bg-white'>
                         <div className='signinContentContainer flex flex-col justify-evenly'>
                             <div className='text-zinc-800 '>Sign up:</div>
+                            <div className='flex flex-col items-center'>
+                            <div className='text-1xl font-bold text-zinc-800  w-3/4'>First Name</div>
+                            <input className='w-3/4 border-2 border-black text-zinc-800 rounded-lg pl-2'
+                            id='name'
+                            placeholder='John'
+                            type='text'
+                            value={newUser.name}
+                            onChange={onChange}
+                            />
+                            </div>
                             <div className='flex flex-col items-center'>
                             <div className='text-1xl font-bold text-zinc-800 w-3/4'>EMAIL</div>
                             <input className='w-3/4 text-zinc-800 border-2 border-black rounded-lg pl-2' 
@@ -83,17 +107,7 @@ const SignIn = ({modalPopUp}) => {
                             onChange={onChange}
                             />
                             </div>
-                            <div className='flex flex-col items-center'>
-                            <div className='text-1xl font-bold text-zinc-800  w-3/4'>VERIFY PASSWORD</div>
-                            <input className='w-3/4 border-2 border-black text-zinc-800 rounded-lg pl-2'
-                            id='matchPassword'
-                            placeholder='Password123'
-                            type='text'
-                            value={newUser.password}
-                            onChange={onChange}
-                            />
-                            </div>
-                            <button className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
+                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), newUserRegistation(e, newUser.name, newUser.email, newUser.password))} className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
                             <div>
                                 <p className='text-zinc-800'>Already have an account?</p>
                                 <p  className='text-zinc-800'><span onClick={toggleSignIn} className='underline text-orange-500'>Sign in</span></p>

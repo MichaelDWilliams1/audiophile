@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
 import { SiteDataContext } from '../context/useSiteData'
 
 const Thumbnail = () => {
@@ -14,7 +15,7 @@ const Thumbnail = () => {
         <div className='flex flex-col justify-end  self-end w-full h-3/4 mr-2 bg-gray-300'>
             <div className=' flex flex-col justify-evenly h-3/6 w-2/4 ml-auto mr-auto text-center'>
                 <p className='font-bold text-lg'>Headphones</p>
-                <button className='font-bold text-sm text-gray-700 hover:text-orange-500'>Shop <i class="uil uil-angle-right-b"></i></button>
+               <Link to='/xx99m1'><button className=' font-bold text-sm text-gray-700 hover:text-orange-500'>Shop <i class="uil uil-angle-right-b"></i></button></Link> 
             </div>
         </div>
     </div>
@@ -24,7 +25,7 @@ const Thumbnail = () => {
         <div className='flex flex-col justify-end self-end w-full h-3/4 ml-2 mr-2 bg-gray-300'>
         <div className=' flex flex-col justify-evenly h-3/6 w-2/4 ml-auto mr-auto text-center'>
                 <p className='font-bold text-lg'>Headphones</p>
-                <button className='font-bold text-sm text-gray-700 hover:text-orange-500'>Shop <i class="uil uil-angle-right-b"></i></button>
+               <Link to='/zx9'><button className='font-bold text-sm text-gray-700 hover:text-orange-500'>Shop <i class="uil uil-angle-right-b"></i></button></Link> 
             </div>
         </div>
     </div>
@@ -33,9 +34,9 @@ const Thumbnail = () => {
         <div className='flex flex-col justify-end border-2 border-black-400 self-end w-full h-3/4 ml-2 bg-gray-300'>
         <div className=' flex flex-col justify-evenly h-3/6 w-2/4 ml-auto mr-auto text-center'>
                 <p className='font-bold text-lg'>Headphones</p>
-                <button className='font-bold text-sm text-gray-700 hover:text-orange-500'>
+                <Link to='/yx1'><button className='font-bold text-sm text-gray-700 hover:text-orange-500'>
                     Shop
-                    <i class="uil uil-angle-right-b"></i></button>
+                    <i class="uil uil-angle-right-b"></i></button></Link>
             </div>
         </div>
     </div>

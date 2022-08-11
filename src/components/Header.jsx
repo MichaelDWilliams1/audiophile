@@ -8,11 +8,11 @@ const {siteData} = useContext(SiteDataContext)
 console.log(siteData[0]?.home[0]?.headerImage)
   
   return (
-    <div className='headerBackground  bg-neutral-900 text-gray-50 h-5/6 w-729px'>
+    <div className='headerBackground bg-neutral-900 text-gray-50 h-5/6 w-729px'>
         <hr className=' w-10/12 ml-auto mr-auto border-1 border-white-500'></hr>
         <header className='  flex m-auto w-5/6 min-h-full'>
 <div className='h-82 w-2/4 '>
-    <div className=' flex flex-col justify-between  h-3/4 w-5/6 m-auto mt-20'>
+    <div className='flex flex-col justify-between  h-3/4 w-5/6 m-auto mt-20'>
        <section className='flex'><div className='w-16 text-zinc-500'>N E W</div><div className='text-zinc-500' >P R O D U C T</div></section> 
         <section className='flex flex-col'>
         <div className='text-6xl'>XX99 MARK II</div>

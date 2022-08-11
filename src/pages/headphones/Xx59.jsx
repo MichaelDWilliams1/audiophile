@@ -5,7 +5,7 @@ import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
 
 const Xx59 = () => {
-  const { siteData } = useContext(SiteDataContext);
+  const { siteData, addToCart } = useContext(SiteDataContext);
 
   const navigate = useNavigate();
 
@@ -55,7 +55,8 @@ const Xx59 = () => {
                   <div className="w-1/3">+</div>
                 </div>
                 <button
-                  id={siteData[0]?.product[3]?.price}
+                onClick={() => addToCart(siteData[0]?.product[1])}
+                  id={siteData[0]?.product[1]?.price}
                   className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200"
                 >
                   ADD TO CART

@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
 import { SiteDataContext } from '../context/useSiteData'
 
 const SeeProductHomePage = () => {
@@ -23,7 +24,7 @@ const SeeProductHomePage = () => {
                     Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
                     </p>
                 </div>
-                <button className='bg-zinc-600 w-2/4 h-1/6 text-slate-100'>SEE PRODUCT</button>
+                <Link className='w-2/4 h-1/6' to='/zx9'><button className='bg-black w-full h-full text-slate-100 hover:bg-zinc-800'>SEE PRODUCT</button></Link>
                 </div>
             </div>
         </div>
@@ -32,7 +33,7 @@ const SeeProductHomePage = () => {
         <div className='h-full w-1/3 flex flex-col justify-center items-end'>
             <div className='w-3/4 h-2/6 flex flex-col justify-between'>
                 <p className='text-3xl font-bold'>ZX7 SPEAKER</p>
-            <button className='w-4/6 h-3/6 bg-black text-white'>SEE PRODUCT</button>
+           <Link className='w-4/6 h-3/6' to='/zx7'> <button className='w-full h-full bg-black text-white hover:bg-zinc-800'>SEE PRODUCT</button></Link>
             </div>
             
         </div>
@@ -45,7 +46,7 @@ const SeeProductHomePage = () => {
       <div className='border-2 border-green flex justify-center items-center w-3/6 bg-stone-200 rounded-xl'>
         <div className=' flex flex-col justify-between h-2/6 w-3/4'>
         <p className='text-3xl font-bold'>YX1 EARPHONES</p>
-            <button className='w-3/6 h-3/6 bg-black text-white'>SEE PRODUCT</button>
+           <Link className='w-3/6 h-3/6' to='/yx1'> <button className='w-full h-full bg-black text-white hover:bg-zinc-800'>SEE PRODUCT</button></Link>
         </div>
       </div>
     </section>
