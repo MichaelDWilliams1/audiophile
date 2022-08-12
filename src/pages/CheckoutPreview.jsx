@@ -1,15 +1,24 @@
 import React, {useContext} from 'react'
 import { SiteDataContext } from '../context/useSiteData'
+import { auth } from '../firebase-config'
+import CartItems from '../components/CartItems'
+
 const CheckoutPreview = ({modalCartPopUpClose}) => {
 
-    const {itemsInCart, inCartCount} = useContext(SiteDataContext)
-console.log(itemsInCart[0]?.image.desktop)
+    const {userData} = useContext(SiteDataContext)
+console.log(userData)
+    const currentUser = userData.filter(user => user.id === auth?.currentUser.uid)
+
+
+    console.log(currentUser)
+
   return (
     <>
     <section className='absolute ht-screen w-screen flex  bg-zinc-900/90'>
                 <div id='closeModal' onClick={(e)=>modalCartPopUpClose(e)} className='border-2 border-red-600 h-screen w-screen flex justify-end'>
-                    <div className='h-4/6 w-3/12 flex rounded-lg bg-white mt-24 mr-40'>
-                      <section className=' h-4/5 w-4/5 m-auto'>
+                  <div className='h-4/6 w-3/12 flex rounded-lg bg-white mt-24 mr-40'>
+                    <CartItems currentUser={currentUser} />
+                      {/* <section className=' h-4/5 w-4/5 m-auto'>
                         <section className='flex justify-between  h-auto'>
                             <div className='text-black'>{`CART (${inCartCount})`}</div>
                             <div className='text-black'>Remove All</div>
@@ -29,7 +38,7 @@ console.log(itemsInCart[0]?.image.desktop)
                             <div className='text-black'>$5,000</div>
                         </section>
                         <button className='bg-orange-600 w-full h-16 mt-4'>CHECKOUT</button>
-                      </section>
+                      </section> */}
                     </div>
                 </div>
         </section>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
 
 const {siteData} = useContext(SiteDataContext)
-console.log(siteData[0]?.home[0]?.headerImage)
+
   
   return (
     <div className='headerBackground bg-neutral-900 text-gray-50 h-5/6 w-729px'>

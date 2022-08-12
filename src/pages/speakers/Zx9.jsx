@@ -13,7 +13,7 @@ const Zx9 = () => {
     navigate(-1);
   };
 
-  console.log(siteData);
+  
   return (
     <>
       <section className="h-full w-full">

@@ -8,6 +8,9 @@ import {
   addDoc,
   updateDoc,
   arrayUnion,
+  getDoc,
+  query,
+  where
 } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -28,8 +31,10 @@ const SiteDataProvider = ({ children }) => {
   //cart state 
   const [inCartCount, setInCartCount] = useState(0)
   const [itemsInCart, setItemsInCart] = useState([])
-
+  const [userData, setUserData] = useState([])
+  const [change, setChange] = useState(false)
   const siteCollectionRef = collection(db, "product");
+  const userCollectionRef = collection(db, 'users')
 
   const navigate = useNavigate();
 
@@ -46,13 +51,23 @@ const SiteDataProvider = ({ children }) => {
     getSiteData();
   }, []);
 
-  onAuthStateChanged(auth, (currentUser) => {
-    // if (userName === currentUser?.displayName) return;
-    // if (currentUser) {
-    //   setUserName(currentUser.displayName);
-    //   setUserEmail(currentUser.email);
-    // }
-  });
+
+  useEffect(()=>{
+    const grabUsersData = async () => {
+     
+  try{
+  const data = await getDocs(userCollectionRef);
+  setUserData(
+    data.docs.map((doc)=>({ ...doc.data(), id: doc.id}))
+  )
+  
+  }catch(e){
+  alert('Error getting user data')
+  }
+    }
+    grabUsersData()
+  }, [change])
+
 
   const newUserRegistation = async (e, name, email, password) => {
     e.preventDefault();
@@ -96,10 +111,12 @@ const SiteDataProvider = ({ children }) => {
 
       if (userCredential.user) {
         window.location.reload();
+        setChange(prev => !prev)
       }
     } catch (error) {
       alert("error");
     }
+    
   };
 
   const logout = async () => {
@@ -109,20 +126,41 @@ const SiteDataProvider = ({ children }) => {
 
 //The section below will be all about adding items to the cart. 
 // ~Come back and save cart items to server~
-const addToCart = (item) => {
+const addToCart = async(...item) => {
+  console.log(item)
     if(auth.currentUser === null){
         alert('You must be signed in to add to cart')
+        return
     }
-console.log(item)
-setInCartCount(prev => prev + 1)
-setItemsInCart(prev => [...prev, item])
-}
+    try{
+      const userRef = doc(db, "users", auth.currentUser.uid);
+    
+      await updateDoc(userRef, {
+        currentItemsInCart: arrayUnion({
+        name: item[0].name,
+        price: item[0].price,
+        image: item[0].image.desktop
+        //add nanoid here
+        })})
+        setChange(prev => !prev)
+    
+    }catch(e){
+      alert('error')
+    }
+  }
 
-console.log(itemsInCart)
+/*
+Every item needs a unique id for creation and delete.
+~ need to make functional buttons so that the user can add more than one of the same item. 
+    It should also allow the user to decrement amount in the cart
+~ Need to make a delete item completly from cart function. This means removing from the server.
+~ Once the above is done begin making the checkout page.
+*/
+
 
   return (
     <SiteDataContext.Provider
-      value={{ siteData, newUserRegistation, logout, login, addToCart, inCartCount, itemsInCart }}
+      value={{ siteData, newUserRegistation, logout, login, addToCart, itemsInCart, userData }}
     >
       {children}
     </SiteDataContext.Provider>
