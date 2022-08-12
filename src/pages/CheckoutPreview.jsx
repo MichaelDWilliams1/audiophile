@@ -7,7 +7,7 @@ const CheckoutPreview = ({modalCartPopUpClose}) => {
 
     const {userData} = useContext(SiteDataContext)
 console.log(userData)
-    const currentUser = userData.filter(user => user.id === auth?.currentUser.uid)
+    const currentUser = userData.filter(user => user.id === auth.currentUser?.uid)
 
 
     console.log(currentUser)
