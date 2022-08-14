@@ -22,6 +22,7 @@ import {
 } from "firebase/auth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 const SiteDataContext = createContext();
 
@@ -126,7 +127,7 @@ const SiteDataProvider = ({ children }) => {
 
 //The section below will be all about adding items to the cart. 
 // ~Come back and save cart items to server~
-const addToCart = async(...item) => {
+const addToCart = async(amount, ...item) => {
   console.log(item)
     if(auth.currentUser === null){
         alert('You must be signed in to add to cart')
@@ -139,8 +140,9 @@ const addToCart = async(...item) => {
         currentItemsInCart: arrayUnion({
         name: item[0].name,
         price: item[0].price,
-        image: item[0].image.desktop
-        //add nanoid here
+        image: item[0].image.desktop,
+        amount: amount,
+        id: item[0].id
         })})
         setChange(prev => !prev)
     
@@ -149,8 +151,11 @@ const addToCart = async(...item) => {
     }
   }
 
+  const removeFromCart = () => {
+    alert('works')
+  }
+
 /*
-Every item needs a unique id for creation and delete.
 ~ need to make functional buttons so that the user can add more than one of the same item. 
     It should also allow the user to decrement amount in the cart
 ~ Need to make a delete item completly from cart function. This means removing from the server.
@@ -160,7 +165,7 @@ Every item needs a unique id for creation and delete.
 
   return (
     <SiteDataContext.Provider
-      value={{ siteData, newUserRegistation, logout, login, addToCart, itemsInCart, userData }}
+      value={{ siteData, newUserRegistation, logout, login, addToCart, removeFromCart, itemsInCart, userData }}
     >
       {children}
     </SiteDataContext.Provider>

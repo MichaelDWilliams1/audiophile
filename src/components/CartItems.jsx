@@ -5,10 +5,10 @@ const CartItems = ({ currentUser }) => {
  if(currentUser === undefined) return
   const items =  currentUser[0]?.currentItemsInCart.map((item, index) => (
     <section key={index} className="flex mt-4 h-1/6 overflow-auto">
-      <div className=" w-1/4">
+      <div className=" w-1/5">
         <img className="h-full w-full object-cover" src={item.image} />
       </div>
-      <div className="w-2/4 flex flex-col">
+      <div className="w-2/5 flex flex-col">
         <div className="text-black h-1/2 text-sm font-bold flex items-center pl-4">
           {item.name}
         </div>
@@ -16,17 +16,19 @@ const CartItems = ({ currentUser }) => {
           ${item.price}
         </div>
       </div>
-      <div className="h-full w-1/4 text-black flex items-center">
+      <div className="h-full w-2/5 text-black flex items-center">
         <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
           +
         </div>
         <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
-          1
+          {item.amount}
         </div>
         <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
           -
         </div>
+        <i  className="text-red-600 text-2xl ml-2 mr-2 uil uil-trash-alt"></i>
       </div>
+      
     </section>
   ));
 
@@ -39,7 +41,6 @@ const CartItems = ({ currentUser }) => {
     
     const inCartCount = currentUser[0]?.currentItemsInCart.length
 
-  console.log(totalCost);
   return (
     <section className=" h-4/5 w-4/5 m-auto overflow-y-scroll ">
       <section className="flex justify-between h-auto">
