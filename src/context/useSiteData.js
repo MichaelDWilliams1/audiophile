@@ -129,7 +129,7 @@ const SiteDataProvider = ({ children }) => {
 //The section below will be all about adding items to the cart. 
 // ~Come back and save cart items to server~
 const addToCart = async(amount, ...item) => {
-  console.log(item)
+  
     if(auth.currentUser === null){
         alert('You must be signed in to add to cart')
         return
@@ -152,15 +152,18 @@ const addToCart = async(amount, ...item) => {
     }
   }
 
-  const removeFromCart = async(e, ...item) => {
+  const removeFromCart = async(e, index, ...item) => {
     if(e.target.id !== 'trash') return
-console.log(item[0].id)
+
+  
+
+
     try{
      const userRef = doc(db, "users", auth.currentUser.uid)
       const docSnap = await getDoc(userRef)
-      
+ 
        await updateDoc(userRef, {
-        currentItemsInCart: arrayRemove(docSnap.data().currentItemsInCart[0])
+        currentItemsInCart: arrayRemove(docSnap.data().currentItemsInCart[index])
      })
 
      setChange(prev => !prev)

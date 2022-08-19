@@ -16,7 +16,7 @@ const CartItems = ({ currentUser }) => {
     ) : (
       currentUser[0]?.currentItemsInCart.map((item, index) => (
         <section
-          onClick={(e) => removeFromCart(e, item)}
+          onClick={(e) => removeFromCart(e, index, item)}
           id={item.id}
           key={index}
           className="flex mt-4 h-1/6 overflow-auto"
