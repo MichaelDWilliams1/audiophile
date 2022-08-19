@@ -14,7 +14,7 @@ const Yx1 = () => {
   const navigateBack = () => {
     navigate(-1);
   };
-//fix this
+
   const addOrSubtract = (e) => {
 if(addOrSubtractAmountOfItem === 1 && e.target.id === 'minus') return
 
@@ -24,8 +24,6 @@ switch(e.target.id){
   case 'minus':
     return setAddOrSubtractAmountOfItem(addOrSubtractAmountOfItem - 1)
 }
-
-
   }
   
 

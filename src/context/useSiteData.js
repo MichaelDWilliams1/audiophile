@@ -6,11 +6,11 @@ import {
   setDoc,
   doc,
   addDoc,
-  updateDoc,
-  arrayUnion,
   getDoc,
-  query,
-  where
+  updateDoc,
+  deleteField,
+  arrayUnion,
+  arrayRemove
 } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -23,6 +23,7 @@ import {
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
+import { FirebaseError } from "firebase/app";
 
 const SiteDataContext = createContext();
 
@@ -46,7 +47,7 @@ const SiteDataProvider = ({ children }) => {
         const data = await getDocs(siteCollectionRef);
         setSiteData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       } catch (e) {
-        alert("Something went wrong");
+        alert("Something went wrong"); 
       }
     };
     getSiteData();
@@ -147,12 +148,39 @@ const addToCart = async(amount, ...item) => {
         setChange(prev => !prev)
     
     }catch(e){
-      alert('error')
+      alert(e.message)
     }
   }
 
-  const removeFromCart = () => {
-    alert('works')
+  const removeFromCart = async(e, ...item) => {
+    if(e.target.id !== 'trash') return
+console.log(item[0].id)
+    try{
+     const userRef = doc(db, "users", auth.currentUser.uid)
+      const docSnap = await getDoc(userRef)
+      
+       await updateDoc(userRef, {
+        currentItemsInCart: arrayRemove(docSnap.data().currentItemsInCart[0])
+     })
+
+     setChange(prev => !prev)
+    }catch(error){
+     alert(error.message)
+    }
+  }
+
+  const removeAllFromCart = async() => {
+
+   try{
+    const userRef = doc(db, "users", auth.currentUser.uid)
+
+    await updateDoc(userRef, {
+      currentItemsInCart: deleteField()
+    })
+   setChange(prev => !prev)
+   }catch(e){
+    alert(e.message)
+   }
   }
 
 /*
@@ -165,7 +193,7 @@ const addToCart = async(amount, ...item) => {
 
   return (
     <SiteDataContext.Provider
-      value={{ siteData, newUserRegistation, logout, login, addToCart, removeFromCart, itemsInCart, userData }}
+      value={{ siteData, newUserRegistation, logout, login, addToCart, removeFromCart, removeAllFromCart, itemsInCart, userData, setChange }}
     >
       {children}
     </SiteDataContext.Provider>

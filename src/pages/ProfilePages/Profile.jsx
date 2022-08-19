@@ -6,7 +6,7 @@ import { auth } from '../../firebase-config'
 const Profile = () => {
     
     const {logout} = useContext(SiteDataContext)
-    console.log(auth.currentUser.email)
+    
 
   return (
    <section className=' h-screen min-h-fit'>
@@ -19,14 +19,14 @@ const Profile = () => {
   <section className=' h-1/2 w-full mt-5'>
   <hr className='w-9/12 ml-auto mr-auto border-1 border-zinc-500'></hr>
     <div className='w-9/12 m-auto h-full flex flex-col mt-5'>
-    <h1 className='text-4xl text-center'>{`${auth.currentUser?.displayName}'s`}</h1>
+    <h1 className='text-4xl text-center'>{`${auth?.currentUser?.displayName}'s`}</h1>
 {/* map recent orders here */}
     </div>
   </section>
   <section className=' h-1/2 w-full'>
   <hr className='w-9/12 ml-auto mr-auto border-1 border-zinc-500'></hr>
     <div className='w-9/12 m-auto h-full flex flex-col'>
-    <h1 className='text-4xl text-center'>{`${auth.currentUser?.displayName}'s Wish List`}</h1>
+    <h1 className='text-4xl text-center'>{`${auth?.currentUser?.displayName}'s Wish List`}</h1>
     {/* map wish list here */}
     </div>
   </section>

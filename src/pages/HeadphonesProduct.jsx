@@ -37,7 +37,7 @@ const navigate = useNavigate();
                     <div>
                         <p className="text-md">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                     </div>
-                    <Link to='/xx99m2'><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
+                    <Link to={`/item/${siteData[0]?.product[3].slug}`}><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>
            </div>
         </div>
@@ -51,7 +51,7 @@ const navigate = useNavigate();
                     <div>
                         <p className="text-md">As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
                     </div>
-                   <Link to='/xx99m1'><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
+                   <Link to={`/item/${siteData[0]?.product[2].slug}`}><button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>
             </div>
             <div className=" w-1/2 h-full">
@@ -72,7 +72,7 @@ const navigate = useNavigate();
                     <div>
                         <p className="text-md">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                     </div>
-                   <Link to='/xx59'> <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
+                   <Link to={`/item/${siteData[0]?.product[1].slug}`}> <button className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>
             </div>
         </div>

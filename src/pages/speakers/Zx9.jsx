@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { SiteDataContext } from "../../context/useSiteData";
 import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
 
 const Zx9 = () => {
+  const [addOrSubtractAmountOfItem, setAddOrSubtractAmountOfItem] = useState(1)
+
   const { siteData, addToCart } = useContext(SiteDataContext);
 
   const navigate = useNavigate();
@@ -13,6 +15,17 @@ const Zx9 = () => {
     navigate(-1);
   };
 
+
+  const addOrSubtract = (e) => {
+    if(addOrSubtractAmountOfItem === 1 && e.target.id === 'minus') return
+    
+    switch(e.target.id){
+      case 'add':
+        return setAddOrSubtractAmountOfItem(addOrSubtractAmountOfItem + 1)
+      case 'minus':
+        return setAddOrSubtractAmountOfItem(addOrSubtractAmountOfItem - 1)
+    }
+      }
   
   return (
     <>
@@ -50,12 +63,12 @@ const Zx9 = () => {
               <div className="flex">
                 <div className="bg-gray-200 h-20 w-2/6 flex items-center text-center mr-10">
                   {/* Need to add some state here */}
-                  <div className="w-1/3">-</div>
-                  <div className="w-1/3">1</div>
-                  <div className="w-1/3">+</div>
+                  <div onClick={(e) => addOrSubtract(e)} id='minus' className="w-1/3">-</div>
+                  <div className="w-1/3">{addOrSubtractAmountOfItem}</div>
+                  <div onClick={(e) => addOrSubtract(e)} id='add' className="w-1/3">+</div>
                 </div>
                 <button
-                  onClick={() => addToCart(siteData[0]?.product[5])}
+                  onClick={() => addToCart(addOrSubtractAmountOfItem, siteData[0]?.product[5])}
                   id={siteData[0]?.product[5].price}
                   className="w-2/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200"
                 >

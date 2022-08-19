@@ -13,7 +13,7 @@ const CheckoutPreview = ({modalCartPopUpClose}) => {
     <>
     <section className='absolute ht-screen w-screen flex  bg-zinc-900/90'>
                 <div id='closeModal' onClick={(e)=>modalCartPopUpClose(e)} className='border-2 border-red-600 h-screen w-screen flex justify-end'>
-                  <div className='h-4/6 w-80 flex rounded-lg bg-white mt-24 mr-40'>
+                  <div className='h-4/6 w-3/12 flex rounded-lg bg-white mt-24 mr-40'>
                     <CartItems currentUser={currentUser} />
                     </div>
                 </div>
