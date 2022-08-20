@@ -95,7 +95,7 @@ const SiteDataProvider = ({ children }) => {
 
       window.location.reload();
     } catch (e) {
-      toast.e("Something went wrong with regristration");
+      alert(e.message);
     }
   };
 
@@ -116,7 +116,7 @@ const SiteDataProvider = ({ children }) => {
         setChange(prev => !prev)
       }
     } catch (error) {
-      alert("error");
+      alert(error.message);
     }
     
   };
@@ -154,9 +154,6 @@ const addToCart = async(amount, ...item) => {
 
   const removeFromCart = async(e, index, ...item) => {
     if(e.target.id !== 'trash') return
-
-  
-
 
     try{
      const userRef = doc(db, "users", auth.currentUser.uid)

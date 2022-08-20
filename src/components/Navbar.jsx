@@ -59,13 +59,13 @@ const openModalPopUp = (e) => {
     <>
     <div className='flex flex-col h-24  bg-neutral-900 text-white'>
         <nav className='flex  w-5/6 h-1/2 m-auto space-x-40 '>
-            <div className='flex w-1/6  text-2xl font-bold items-center'>audiophile</div>
+            <Link to='/'><div className='flex w-1/6  text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
             <div className='flex w-3/6 ' >
                 <ul className='flex items-center space-x-16'>
-                    <NavLink to='/' activeStyle={{color: 'green'}}><li>HOME</li></NavLink>
-                    <Link to='/headphonesproductpage'><li>HEADPHONES</li></Link>
-                    <Link to='/speakerproductpage'><li>SPEAKERS</li></Link>
-                    <Link to='/earphoneproductpage'><li>EARPHONES</li></Link>
+                    <Link className='hover:text-orange-600' to='/' ><li className='focus:text-orange-600'>HOME</li></Link>
+                    <Link className='hover:text-orange-600' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
+                    <Link className='hover:text-orange-600' to='/speakerproductpage'><li>SPEAKERS</li></Link>
+                    <Link className='hover:text-orange-600' to='/earphoneproductpage'><li>EARPHONES</li></Link>
                 </ul>
             </div>
             <div className='flex justify-end items-center   w-1/6'>
@@ -74,7 +74,7 @@ const openModalPopUp = (e) => {
             className='bg-orange-600 rounded-lg w-20 h-3/5 flex justify-center items-center cursor-pointer hover:bg-orange-500'>
               {signInOrProfile}
           </div> </Link>
-        <i onClick={modalCartPopUpOpen} className="text-4xl ml-10 uil uil-shopping-cart relative"><CartItemsCounter /></i>
+        <i onClick={modalCartPopUpOpen} className="text-4xl ml-10 uil uil-shopping-cart relative hover:text-orange-600"><CartItemsCounter /></i>
         </div>
         </nav>
        

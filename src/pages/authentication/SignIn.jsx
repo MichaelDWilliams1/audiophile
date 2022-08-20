@@ -45,7 +45,7 @@ const SignIn = ({modalPopUp}) => {
                             <div className='text-zinc-800'>Login:</div>
                             <div className='flex flex-col items-center'>
                             <div className='text-2xl font-bold text-zinc-800  w-3/4'>EMAIL</div>
-                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700' 
+                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700 focus:outline-none focus:border-orange-600' 
                              placeholder='user@gmail.com'
                              id='email'
                             type='text'
@@ -55,7 +55,7 @@ const SignIn = ({modalPopUp}) => {
                             </div>
                             <div className='flex flex-col items-center'>
                             <div className='text-2xl font-bold text-zinc-800  w-3/4'>PASSWORD</div>
-                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700'
+                            <input className='w-3/4 border-2 border-black rounded-lg pl-2 text-zinc-700 focus:outline-none focus:border-orange-600'
                              placeholder='Password123'
                              id='password'
                              type='text'
@@ -79,7 +79,7 @@ const SignIn = ({modalPopUp}) => {
                             <div className='text-zinc-800 '>Sign up:</div>
                             <div className='flex flex-col items-center'>
                             <div className='text-1xl font-bold text-zinc-800  w-3/4'>First Name</div>
-                            <input className='w-3/4 border-2 border-black text-zinc-800 rounded-lg pl-2'
+                            <input className='w-3/4 border-2 border-black text-zinc-800 rounded-lg pl-2 focus:outline-none focus:border-orange-600'
                             id='name'
                             placeholder='John'
                             type='text'
@@ -89,7 +89,7 @@ const SignIn = ({modalPopUp}) => {
                             </div>
                             <div className='flex flex-col items-center'>
                             <div className='text-1xl font-bold text-zinc-800 w-3/4'>EMAIL</div>
-                            <input className='w-3/4 text-zinc-800 border-2 border-black rounded-lg pl-2' 
+                            <input className='w-3/4 text-zinc-800 border-2 border-black rounded-lg pl-2 focus:outline-none focus:border-orange-600' 
                             id='email'
                             placeholder='user@gmail.com'
                             type='text'
@@ -99,7 +99,7 @@ const SignIn = ({modalPopUp}) => {
                             </div>
                             <div className='flex flex-col items-center'>
                             <div className='text-1xl font-bold text-zinc-800  w-3/4'>PASSWORD</div>
-                            <input className='w-3/4 border-2 text-zinc-800 border-black rounded-lg pl-2'
+                            <input className='w-3/4 border-2 text-zinc-800 border-black rounded-lg pl-2 focus:outline-none focus:border-orange-600'
                              id='password'
                             placeholder='Password123'
                             type='text'

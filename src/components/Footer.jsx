@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
     <div className=' flex w-5/6 h-5/6 m-auto'>
         <div className=' flex h-full w-2/4'>
             <div className=' flex flex-col w-5/6 justify-between h-5/6 m-auto '>
-                <div className='text-zinc-200 text-lg font-bold'>audiophile</div>
+                <Link to='/'><div className='text-zinc-200 text-lg font-bold hover:text-orange-600'>audiophile</div></Link>
                 <p className='text-zinc-500 text-base'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
                 <p className='text-zinc-500 text-base'>Copyright 2021. All Rights Reserved</p>
             </div>
@@ -15,10 +16,10 @@ const Footer = () => {
         <div className=' w-5/6 h-5/6 m-auto'>
             <div className=' h-1/4 flex'>
                 <ul className='flex w-full justify-between  text-zinc-200'>
-                    <li>HOME</li>
-                    <li>HEADPHONES</li>
-                    <li>SPEAKERS</li>
-                    <li>EARPHONES</li>
+                    <Link className='hover:text-orange-600' to='/'><li>HOME</li></Link>
+                    <Link className='hover:text-orange-600' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
+                    <Link className='hover:text-orange-600' to='/speakerproductpage'><li>SPEAKERS</li></Link>
+                    <Link className='hover:text-orange-600' to='/earphoneproductpage'><li>EARPHONES</li></Link>
                 </ul>
             </div>
             <div className=' flex justify-end items-center h-3/4'>

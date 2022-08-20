@@ -19,7 +19,7 @@ const {siteData} = useContext(SiteDataContext)
         <div className='text-6xl'>HEADPHONES</div>
         </section>
         <section className='text-lg flex-wrap w-5/6 font-medium text-zinc-400'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</section>
-       <Link to={`/item/${siteData[0]?.product[3].slug}`}> <button className=' w-2/6 h-20 bg-orange-600 hover:bg-orange-500'>SEE PRODUCT</button></Link>
+       <Link to={`/item/${siteData[0]?.product[3].slug}`}><button className=' w-2/6 h-20 bg-orange-600 hover:bg-orange-500'>SEE PRODUCT</button></Link>
     </div>
     <div>
     </div>
