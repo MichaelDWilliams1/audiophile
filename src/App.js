@@ -26,15 +26,8 @@ function App() {
         <Route path='/earphoneproductpage' element={<EarphoneProduct />}></Route>
         <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
         <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
-        {/* <Route path='/xx99m2' element={<MarkII />}></Route>
-        <Route path='/xx99m1' element={<MarkI />}></Route>
-        <Route path='/xx59' element={<Xx59 />}></Route>
-        <Route path='/zx9' element={<Zx9 />}></Route>
-        <Route path='/zx7' element={<Zx7 />}></Route>
-        <Route path='/yx1' element={<Yx1 />}></Route> */}
         <Route path='/item/:pageId' element={<ItemPage />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
-        {/* <Route path='/signinpage' element={<SignIn />}></Route> */}
       </Routes>
       <GoToTop />
       

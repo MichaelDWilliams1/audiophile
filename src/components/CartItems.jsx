@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { SiteDataContext } from "../context/useSiteData";
 
 const CartItems = ({ currentUser }) => {
-  const { removeFromCart, removeAllFromCart } = useContext(SiteDataContext);
+  const {addToCart, removeFromCart, removeAllFromCart } = useContext(SiteDataContext);
 
   const items =
     currentUser[0] === undefined ? (
@@ -33,14 +33,14 @@ const CartItems = ({ currentUser }) => {
             </div>
           </div>
           <div className="h-full w-2/5 text-black flex items-center">
-            <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
-              +
+            <div id='minus' onClick={(e)=>addToCart(e, item.amount)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+              -
             </div>
             <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               {item.amount}
             </div>
-            <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
-              -
+            <div id='add' className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+              +
             </div>
             <i
               id="trash"
@@ -57,7 +57,7 @@ const CartItems = ({ currentUser }) => {
       : currentUser[0].currentItemsInCart === undefined
       ? 0
       : currentUser[0]?.currentItemsInCart
-          .map((item) => item.price)
+          .map((item) => item.price * item.amount)
           .reduce(
             (prevItemValue, currentItemValue) =>
               prevItemValue + currentItemValue,

@@ -128,11 +128,14 @@ const SiteDataProvider = ({ children }) => {
 
 //The section below will be all about adding items to the cart. 
 // ~Come back and save cart items to server~
-const addToCart = async(amount, ...item) => {
+const addToCart = async(e, amount, ...item) => {
   
     if(auth.currentUser === null){
         alert('You must be signed in to add to cart')
         return
+    }
+    if(e.target.innerHTML === 'minus'){
+      console.log(amount--)
     }
     try{
       const userRef = doc(db, "users", auth.currentUser.uid);
@@ -152,7 +155,7 @@ const addToCart = async(amount, ...item) => {
     }
   }
 
-  const removeFromCart = async(e, index, ...item) => {
+  const removeFromCart = async(e, index) => {
     if(e.target.id !== 'trash') return
 
     try{
