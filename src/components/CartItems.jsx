@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { SiteDataContext } from "../context/useSiteData";
 
 const CartItems = ({ currentUser }) => {
-  const {addToCart, removeFromCart, removeAllFromCart } = useContext(SiteDataContext);
+  const {addToCart, removeFromCart, removeAllFromCart, updateItemCount } = useContext(SiteDataContext);
 
   const items =
     currentUser[0] === undefined ? (
@@ -33,13 +33,13 @@ const CartItems = ({ currentUser }) => {
             </div>
           </div>
           <div className="h-full w-2/5 text-black flex items-center">
-            <div id='minus' onClick={(e)=>addToCart(e, item.amount)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               -
             </div>
             <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               {item.amount}
             </div>
-            <div id='add' className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='add' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               +
             </div>
             <i

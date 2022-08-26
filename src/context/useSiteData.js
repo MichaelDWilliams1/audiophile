@@ -128,15 +128,13 @@ const SiteDataProvider = ({ children }) => {
 
 //The section below will be all about adding items to the cart. 
 // ~Come back and save cart items to server~
-const addToCart = async(e, amount, ...item) => {
-  
+const addToCart = async(amount, ...item) => {
+  console.log('came')
     if(auth.currentUser === null){
         alert('You must be signed in to add to cart')
         return
     }
-    if(e.target.innerHTML === 'minus'){
-      console.log(amount--)
-    }
+  
     try{
       const userRef = doc(db, "users", auth.currentUser.uid);
     
@@ -153,6 +151,40 @@ const addToCart = async(e, amount, ...item) => {
     }catch(e){
       alert(e.message)
     }
+  }
+
+  const updateItemCount = async(e, index, name, price, image, amount, id) => {
+    if(e.target.id === 'minus'){
+      if(amount === 1)return
+      amount = amount - 1
+    }else if (e.target.id === 'add'){
+      amount = amount + 1
+    }
+ 
+    try{
+      const userRef = doc(db, "users", auth.currentUser.uid)
+       const docSnap = await getDoc(userRef)
+
+
+       await updateDoc(userRef, {
+        currentItemsInCart: arrayRemove(docSnap.data().currentItemsInCart[index])
+     })
+  
+        await updateDoc(userRef, {
+         currentItemsInCart: arrayUnion({
+          name: name,
+        price: price,
+        image: image,
+        amount: amount,
+        id: id
+         })
+      })
+ 
+      setChange(prev => !prev)
+     }catch(error){
+      alert(error.message)
+     }
+
   }
 
   const removeFromCart = async(e, index) => {
@@ -186,17 +218,9 @@ const addToCart = async(e, amount, ...item) => {
    }
   }
 
-/*
-~ need to make functional buttons so that the user can add more than one of the same item. 
-    It should also allow the user to decrement amount in the cart
-~ Need to make a delete item completly from cart function. This means removing from the server.
-~ Once the above is done begin making the checkout page.
-*/
-
-
   return (
     <SiteDataContext.Provider
-      value={{ siteData, newUserRegistation, logout, login, addToCart, removeFromCart, removeAllFromCart, itemsInCart, userData, setChange }}
+      value={{ siteData, newUserRegistation, logout, login, addToCart, updateItemCount, removeFromCart, removeAllFromCart, itemsInCart, userData, setChange }}
     >
       {children}
     </SiteDataContext.Provider>
