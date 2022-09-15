@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { SiteDataContext } from "../context/useSiteData";
 
+
 const CartItems = ({ currentUser }) => {
-  const {addToCart, removeFromCart, removeAllFromCart, updateItemCount } = useContext(SiteDataContext);
+  const {addToCart, removeFromCart, removeAllFromCart, updateItemCount, createCheckoutSession} = useContext(SiteDataContext);
+
+
 
   const items =
     currentUser[0] === undefined ? (
@@ -84,7 +87,7 @@ const CartItems = ({ currentUser }) => {
         <div className="text-black">Total</div>
         <div className="text-black">{totalCost}</div>
       </section>
-      <button className="bg-orange-600 w-full h-16 mt-4">CHECKOUT</button>
+      <button onClick={()=>createCheckoutSession(currentUser[0])}  className="bg-orange-600 w-full h-16 mt-4">CHECKOUT</button>
     </section>
   );
 };
