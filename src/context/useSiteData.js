@@ -140,7 +140,7 @@ const SiteDataProvider = ({ children }) => {
           image: item[0].image.desktop,
           amount: amount,
           id: item[0].id,
-          productId: item[0].productId
+          payId: item[0].productId
         }),
       });
       setChange((prev) => !prev);
@@ -217,7 +217,7 @@ const SiteDataProvider = ({ children }) => {
 
   //create checkout session here?
 const createCheckoutSession = async(...currentUser) => {
-console.log(currentUser[0].uid)
+
 const docRef = collection(db, `users/${currentUser[0].uid}/checkout_sessions`);
 const {id} = await addDoc(docRef, {
   mode: "payment",
@@ -227,24 +227,21 @@ const {id} = await addDoc(docRef, {
   line_items: currentUser[0].currentItemsInCart.map((item)=> {
     return {
       quantity: item.amount,
-      price: item.productId
+      price: item.payId
     };
   }),
 });
 
-const snappyshot = onSnapshot(doc(db, `users/${currentUser[0].uid}/checkout_sessions/${id}`),
-
-)
-//   const {error, sessionId} = snap.data()
-//   if(error){
-//   alert(error.message)
-//   }
-//   if( sessionId){
-// const stripe = await loadStripe("pk_test_51LfntcHB53EIr3qlK05Iqc9N2oALUiqaSnAhec30LDPXlc52bxzI7KjaMVqc6wgA9MDRSyM7EphV0GS1k3RaoB8D00L920eZEi")
-// stripe.redirectToCheckout({ sessionId })  
-// }
-// })
-
+const checkout = onSnapshot(
+  doc(db, `users/${currentUser[0].uid}/checkout_sessions/${id}`),
+  (snapshot) => {
+    let url = snapshot.data().url;
+    if (url){
+      checkout();
+      window.location.href = url
+    }
+  }
+);
 
 // docRef.onSnapshot(async(snap)=> {
 //   const { sessionId } = snap.data();
