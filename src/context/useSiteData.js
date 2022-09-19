@@ -204,14 +204,14 @@ const SiteDataProvider = ({ children }) => {
 
   const removeAllFromCart = async () => {
     try {
-      const userRef = doc(db, "users", auth.currentUser.uid);
+      const userRef = await doc(db, "users", auth.currentUser.uid);
 
       await updateDoc(userRef, {
         currentItemsInCart: deleteField(),
       });
       setChange((prev) => !prev);
     } catch (e) {
-      alert(e.message);
+      console.log(e.message);
     }
   };
 
@@ -221,9 +221,9 @@ const createCheckoutSession = async(...currentUser) => {
 const docRef = collection(db, `users/${currentUser[0].uid}/checkout_sessions`);
 const {id} = await addDoc(docRef, {
   mode: "payment",
-  success_url: window.location.origin,
+  success_url: 'http://localhost:3000/paySuccess',
   cancel_url: window.location.origin,
-  collect_shipping_address: true,
+  // collect_shipping_address: true,
   line_items: currentUser[0].currentItemsInCart.map((item)=> {
     return {
       quantity: item.amount,
@@ -231,29 +231,48 @@ const {id} = await addDoc(docRef, {
     };
   }),
 });
-
-const checkout = onSnapshot(
+try{
+ onSnapshot(
   doc(db, `users/${currentUser[0].uid}/checkout_sessions/${id}`),
-  (snapshot) => {
-    let url = snapshot.data().url;
-    if (url){
-      checkout();
-      window.location.href = url
+  async(snapshot) => {
+    let {sessionId} = snapshot.data();
+    if (sessionId){
+      const stripe = await loadStripe
+          ("pk_test_51LfntcHB53EIr3qlK05Iqc9N2oALUiqaSnAhec30LDPXlc52bxzI7KjaMVqc6wgA9MDRSyM7EphV0GS1k3RaoB8D00L920eZEi");
+          stripe.redirectToCheckout({sessionId})
     }
-  }
-);
+  }, 
 
-// docRef.onSnapshot(async(snap)=> {
-//   const { sessionId } = snap.data();
- 
-//   if(sessionId){
-//     const stripe = await loadStripe
-//     ("pk_test_51LfntcHB53EIr3qlK05Iqc9N2oALUiqaSnAhec30LDPXlc52bxzI7KjaMVqc6wgA9MDRSyM7EphV0GS1k3RaoB8D00L920eZEi");
-//     stripe.redirectToCheckout({ sessionId })
-//   }
-// })
+)} catch(error){
+  alert(error.mesage)
+}
 }
 
+const recentOrders = async (...items) => {
+  console.log(items);
+  // if (auth.currentUser === null) {
+  //   alert("You must be signed in to add to cart");
+  //   return;
+  // }
+
+  // try {
+  //   const userRef = doc(db, "users", auth.currentUser.uid);
+
+  //   await updateDoc(userRef, {
+  //     currentItemsInCart: arrayUnion({
+  //       name: item[0].name,
+  //       price: item[0].price,
+  //       image: item[0].image.desktop,
+  //       amount: amount,
+  //       id: item[0].id,
+  //       payId: item[0].productId
+  //     }),
+  //   });
+  //   setChange((prev) => !prev);
+  // } catch (e) {
+  //   alert(e.message);
+  // }
+};
   return (
     <SiteDataContext.Provider
       value={{
@@ -268,7 +287,8 @@ const checkout = onSnapshot(
         itemsInCart,
         userData,
         setChange,
-        createCheckoutSession
+        createCheckoutSession,
+        recentOrders
       }}
     >
       {children}

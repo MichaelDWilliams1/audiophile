@@ -5,8 +5,6 @@ import { SiteDataContext } from "../context/useSiteData";
 const CartItems = ({ currentUser }) => {
   const {addToCart, removeFromCart, removeAllFromCart, updateItemCount, createCheckoutSession} = useContext(SiteDataContext);
 
-
-
   const items =
     currentUser[0] === undefined ? (
       <h1 className="text-orange-600 text-2xl underline mt-4">

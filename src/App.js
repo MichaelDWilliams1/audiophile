@@ -15,6 +15,7 @@ import Zx7 from './pages/speakers/Zx7'
 import Yx1 from './pages/earphones/Yx1'
 import Profile from './pages/ProfilePages/Profile'
 import ItemPage from './pages/item/ItemPage'
+import PaySuccess from './pages/PaySuccess'
 // import SignIn from './pages/authentication/SignIn'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
         <Route path='/item/:pageId' element={<ItemPage />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/paySuccess' element={<PaySuccess />}></Route>
       </Routes>
       <GoToTop />
       

@@ -66,7 +66,7 @@ const SignIn = ({modalPopUp}) => {
                             <button id='closeButton' onClick={(e)=> (modalPopUp(e), login(e, returningUser.email, returningUser.password))} className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
                             <div>
                                 <p className='text-zinc-800'>Dont have an account?</p>
-                                <p  className='text-zinc-800'>Create one <span onClick={toggleSignIn} className='underline text-orange-500'>here</span></p>
+                                <p  className='text-zinc-800 hover:cursor-pointer'>Create one <span onClick={toggleSignIn} className='underline text-orange-500'>here</span></p>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ const SignIn = ({modalPopUp}) => {
                             <button id='closeButton' onClick={(e)=> (modalPopUp(e), newUserRegistation(e, newUser.name, newUser.email, newUser.password))} className='bg-orange-500 w-3/4 h-1/6 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
                             <div>
                                 <p className='text-zinc-800'>Already have an account?</p>
-                                <p  className='text-zinc-800'><span onClick={toggleSignIn} className='underline text-orange-500'>Sign in</span></p>
+                                <p  className='text-zinc-800 hover:cursor-pointer'><span onClick={toggleSignIn} className='underline text-orange-500'>Sign in</span></p>
                             </div>
                         </div>
                     </div>
