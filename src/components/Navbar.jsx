@@ -25,11 +25,12 @@ if(modalSignIn || modalItemsInCart){
 
   }, [canScroll])
   
-const signInOrProfile = auth?.currentUser ? 'Profile' : 'Sign in'
+const signInOrProfile = auth?.currentUser ? 'Logout' : 'Sign in'
 const signInOrSignOutID = auth?.currentUser ? 'signout' : 'signin'
 
 const openModalPopUp = (e) => {
-  console.log(e.target.id)
+  console.log(e.target.innerHTML)
+  if(e.target.innerHTML) logout()
   if(e.target.id === 'signout') return
   setModalSignIn(prev=> !prev)
   setCanScroll(prev => !prev)
@@ -57,10 +58,12 @@ const openModalPopUp = (e) => {
 
   return (
     <>
-    <div className='flex flex-col h-24  bg-neutral-900 text-white'>
-        <nav className='flex  w-5/6 h-1/2 m-auto space-x-40 '>
-            <Link to='/'><div className='flex w-1/6  text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
-            <div className='flex w-3/6 ' >
+    <div className='flex h-24  bg-neutral-900 text-white'>
+     <div className='lg:hidden mt-10 ml-20'>///</div>
+    <Link to='/'><div className='flex h-1/2  w-auto mt-7 ml-40 md:ml-10 text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
+        <nav className='flex w-auto h-1/2 m-auto mt-7'>
+           
+            <div className='lg:flex lg:w-3/6 md:hidden' >
                 <ul className='flex items-center space-x-16'>
                     <Link className='hover:text-orange-600' to='/' ><li className='focus:text-orange-600'>HOME</li></Link>
                     <Link className='hover:text-orange-600' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
@@ -69,14 +72,15 @@ const openModalPopUp = (e) => {
                 </ul>
             </div>
             <div className='flex justify-end items-center   w-1/6'>
-        <Link className='w-full h-full flex justify-center items-center cursor-pointer' to={signInOrSignOutID === 'signout' && '/profile'}>
-          <div id={signInOrSignOutID} onClick={(e) => openModalPopUp(e)}
-            className='bg-orange-600 rounded-lg w-20 h-3/5 flex justify-center items-center cursor-pointer hover:bg-orange-500'>
-              {signInOrProfile}
-          </div> </Link>
-        <i onClick={modalCartPopUpOpen} className="text-4xl ml-10 uil uil-shopping-cart relative hover:text-orange-600"><CartItemsCounter /></i>
+       
+          
         </div>
         </nav>
+        <div id={signInOrSignOutID} onClick={(e) => openModalPopUp(e)}
+            className='bg-orange-600 rounded-lg w-24 h-2/5 mt-7 flex justify-center items-center cursor-pointer hover:bg-orange-500'>
+              {signInOrProfile}
+          </div> 
+        <i onClick={modalCartPopUpOpen} className="text-4xl ml-10 mt-7 mr-28 uil uil-shopping-cart relative hover:text-orange-600"><CartItemsCounter /></i>
        
         {modalSignIn && <SignIn modalPopUp={modalPopUp} />}
         {modalItemsInCart && <CheckoutPreview modalCartPopUpClose={modalCartPopUpClose} />}

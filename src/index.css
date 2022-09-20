@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .headerBackground{
     background-image: url('https://firebasestorage.googleapis.com/v0/b/audiophile-ecommerce-e6a79.appspot.com/o/assests%2Fhome%2Fdesktop%2Fimage-hero.jpg?alt=media&token=a8515aaa-0b65-44e7-bbdb-f12af6f98744');
     background-size: contain;
@@ -27,7 +28,15 @@
 }
 
 .signinContentContainer{
-
     height: 90%;
     width: 90%;
+}
+
+@media screen and (max-width: 1024px){
+    .headerBackground{
+        background-image: url('./assets/image-header.jpg');
+        background-size: 100%;
+        background-position: 60%;
+
+    }
 }
