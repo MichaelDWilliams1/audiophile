@@ -39,4 +39,24 @@
         background-position: 60%;
 
     }
+    .backgroundImage{
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/audiophile-ecommerce-e6a79.appspot.com/o/assests%2Fhome%2Ftablet%2Fimage-speaker-zx7.jpg?alt=media&token=bc3de98e-71fa-4895-9a5a-0ca8f474116d');
+        background-repeat: none;
+        background-size: 100% 100%;
+    }
+}
+@media screen and (max-width: 1024px){
+    .backgroundSvg{
+        background-image: url('./assets/pattern-circles-tablet.svg');
+        background-size: 100% 100%;
+         background-repeat: no-repeat;
+     }
+}
+
+@media screen and (max-width: 640px){
+    .backgroundSvg{
+        background-image: url('./assets/pattern-circles-tablet.svg');
+        background-size: 100% 100%;
+         background-repeat: no-repeat;
+     }
 }
