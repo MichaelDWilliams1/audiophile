@@ -72,11 +72,11 @@ if(toggleHamburgerMenu === 'visible'){
     <>
     <div className='flex h-24  bg-neutral-900 text-white'>
      <div className='lg:hidden mt-10 ml-20'><i onClick={toggleMenu} className="uil uil-bars md:hover:text-orange-600"></i></div>
-    <Link to='/'><div className='flex h-1/2  w-auto mt-7 ml-40 md:ml-10 text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
+    <Link to='/'><div className='flex h-1/2  w-auto mt-7 ml-40 md:ml-10 lg:ml-32 text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
         <nav className='flex w-auto h-1/2 m-auto mt-7'>
-            <div className='lg:flex lg:w-3/6 sm:hidden lg:visible' >
+            <div className='lg:flex lg:w-full sm:hidden lg:visible' >
                 <ul className='flex items-center space-x-16'>
-                    <Link className='hover:text-orange-600' to='/' ><li className='focus:text-orange-600'>HOME</li></Link>
+                    <Link className='hover:text-orange-600' to='/' ><li>HOME</li></Link>
                     <Link className='hover:text-orange-600' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
                     <Link className='hover:text-orange-600' to='/speakerproductpage'><li>SPEAKERS</li></Link>
                     <Link className='hover:text-orange-600' to='/earphoneproductpage'><li>EARPHONES</li></Link>

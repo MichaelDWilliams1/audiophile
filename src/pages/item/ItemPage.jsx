@@ -29,6 +29,7 @@ console.log(`page: ${pageId}`)
       }
      
       const currentItem = siteData[0]?.product.filter((item) => item.slug === pageId)
+      console.log(`pageId: ${pageId}`)
      console.log(`current: ${currentItem}`)
      console.log(siteData[0])
   

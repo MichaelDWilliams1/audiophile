@@ -8,9 +8,6 @@ const HeadphonesProduct = () => {
 
 const {siteData} = useContext(SiteDataContext)
 const navigate = useNavigate();
-// console.log(siteData[0]?.product[3]?.image.desktop)
-
-
 
   return (
     <>

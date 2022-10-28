@@ -125,6 +125,7 @@ const SiteDataProvider = ({ children }) => {
   // ~Come back and save cart items to server~
   const addToCart = async (amount, ...item) => {
     console.log("came");
+    console.log(item[0])
     if (auth.currentUser === null) {
       alert("You must be signed in to add to cart");
       return;
@@ -140,7 +141,7 @@ const SiteDataProvider = ({ children }) => {
           image: item[0].image.desktop,
           amount: amount,
           id: item[0].id,
-          payId: item[0].productId
+          payId: item[0].payId
         }),
       });
       setChange((prev) => !prev);

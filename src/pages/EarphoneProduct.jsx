@@ -4,6 +4,7 @@ import Thumbnail from "../components/Thumbnail";
 import BestGear from "../components/BestGear";
 import { Link } from  'react-router-dom'
 const EarphoneProduct = () => {
+    
     const {siteData} = useContext(SiteDataContext)
    
   return (

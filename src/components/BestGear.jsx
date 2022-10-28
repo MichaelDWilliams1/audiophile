@@ -5,10 +5,10 @@ const BestGear = () => {
   const { siteData } = useContext(SiteDataContext);
 
   return (
-    <section className="w-full h-4/5">
-      <div className=" flex w-9/12 h-4/6 m-auto mt-24">
+    <section className="w-full lg:h-4/5 h-3/5 flex">
+      <div className=" flex lg:w-9/12 w-5/6 lg:h-4/6 m-auto mt-24">
         <div className=" flex flex-col justify-center w-2/4">
-          <div className=" flex flex-col justify-evenly h-4/6 w-5/6">
+          <div className=" flex flex-col justify-evenly h-auto space-y-5 w-5/6">
             <div>
               <p className="text-4xl">Bringing you the</p>
               <p className="text-4xl">
@@ -32,7 +32,7 @@ const BestGear = () => {
         <div className=" w-2/4 rounded-xl">
           <img
             className="h-full w-full rounded-xl"
-            src={`${siteData[0]?.home[2].bestGear}`}
+            src={`${siteData[0]?.home[0].bestGear}`}
           />
         </div>
       </div>
