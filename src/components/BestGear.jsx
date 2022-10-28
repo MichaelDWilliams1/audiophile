@@ -7,12 +7,12 @@ const BestGear = () => {
   return (
     <section className="w-full h-auto lg:h-4/5 flex mb-10">
       <div className=" flex flex-col lg:flex-row lg:w-9/12 w-5/6 lg:h-4/6 m-auto mt-24">
-        <div className=" flex order-2 lg:order-1 flex-col justify-center lg:w-2/4">
+        <div className=" flex order-last lg:order-first lg: flex-col justify-center lg:w-2/4">
           <div className="flex flex-col justify-evenly h-auto space-y-5 lg:w-5/6">
             <div className="flex flex-col mt-10 mb-3">
-              <p className="text-4xl m-auto">Bringing you the <span className="text-orange-500 tezt-4xl visible lg:hidden">best</span></p>
-              <p className="text-4xl m-auto">
-                <span className="text-orange-500 tezt-4xl hidden lg:visible">best</span> audio
+              <p className="text-4xl sm:m-auto lg:m-0">Bringing you the <span className="text-orange-500 tezt-4xl inline lg:hidden">best</span></p>
+              <p className="text-4xl sm:m-auto lg:m-0 flex">
+                <span className="text-orange-500 tezt-4xl hidden lg:inline mr-2">best </span> audio
                 gear
               </p>
             </div>
@@ -31,11 +31,11 @@ const BestGear = () => {
         </div>
         <div className="lg:w-2/4 rounded-xl">
           <img
-            className="hidden lg:visible lg:h-full w-full object-cover rounded-xl"
+            className="hidden lg:flex lg:h-full w-full object-cover rounded-xl"
             src={`${siteData[0]?.home[0].bestGear}`}
           />
            <img
-            className="visible lg:hidden lg:h-full w-full object-cover rounded-xl"
+            className="flex lg:hidden lg:h-full w-full object-cover rounded-xl"
             src={`${siteData[0]?.home[0].bestGearTab}`}
           />
         </div>

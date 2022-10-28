@@ -46,7 +46,7 @@ const SeeProductHomePage = () => {
       </div>
       <div className='flex justify-center items-center w-3/6 bg-stone-200 rounded-xl'>
         <div className=' flex flex-col justify-between h-2/6 md:w-5/6 w-full lg:items-start'>
-        <p className='text-3xl font-bold w-full border-2 border-black'>YX1 EARPHONES</p>
+        <p className='text-3xl font-bold w-full'>YX1 EARPHONES</p>
            <Link className='lg:w-3/6 w-full h-3/6 lg:block flex'  to={`/item/${siteData[0]?.product[0].slug}`}> <button className='lg:w-full w-3/4 h-14 lg:h-full border-2 border-black text-black hover:bg-zinc-800'>SEE PRODUCT</button></Link>
         </div>
       </div>
