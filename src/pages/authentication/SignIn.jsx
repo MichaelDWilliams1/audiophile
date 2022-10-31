@@ -4,6 +4,7 @@ import { SiteDataContext } from '../../context/useSiteData'
 
 const SignIn = ({modalPopUp}) => {
     const [hasAccount, setHasAccount] = useState(true)
+    const [guest, setGuest] = useState({email: 'siteGuest@gmail.com', password: 'password123'})
     const [newUser, setNewUser] = useState(
         {
             name: '',
@@ -63,10 +64,12 @@ const SignIn = ({modalPopUp}) => {
                              onChange={onChange}
                             />
                             </div>
-                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), login(e, returningUser.email, returningUser.password))} className='bg-orange-500 lg:w-3/4 w-full lg:h-1/6 h-14 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
+                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), login(e, returningUser.email, returningUser.password))} className='bg-orange-500 lg:w-3/4 w-full lg:h-16 h-14 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
                             <div className=' border-t-2 border-t-slate-400 mt-5'>
                                 <p className='text-zinc-800 mt-5'>Dont have an account?</p>
                                 <p  className='text-zinc-800 hover:cursor-pointer'>Create one <span onClick={toggleSignIn} className='underline text-orange-500'>here</span></p>
+                                <hr className='mt-2'></hr>
+                                <p id='closeButton' className='mt-2 text-zinc-800'>If you would like to demo the website without making a profile please click <span id='closeButton' onClick={(e)=>(modalPopUp(e), login(e, guest.email, guest.password ))} className='hover:cursor-pointer underline text-orange-500'>here</span></p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +110,10 @@ const SignIn = ({modalPopUp}) => {
                             onChange={onChange}
                             />
                             </div>
-                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), newUserRegistation(e, newUser.name, newUser.email, newUser.password))} className='bg-orange-500 lg:w-3/4 lg:h-1/6 w-full h-16 rounded-lg ml-auto mr-auto hover:bg-orange-300'>SUBMIT</button>
+                            <button id='closeButton' onClick={(e)=> (modalPopUp(e), newUserRegistation(e, newUser.name, newUser.email, newUser.password))}
+                             className='bg-orange-500 lg:w-3/4 lg:h-16 w-full h-16 rounded-lg ml-auto mr-auto hover:bg-orange-300'>
+                                SUBMIT
+                            </button>
                             <div className='border-t-2 border-t-zinc-400 mt-5'>
                                 <p className='text-zinc-800 mt-5'>Already have an account?</p>
                                 <p  className='text-zinc-800 hover:cursor-pointer'><span onClick={toggleSignIn} className='underline text-orange-500'>Sign in</span></p>
