@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Navbar from './components/Navbar'
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
@@ -15,24 +15,47 @@ import Zx7 from './pages/speakers/Zx7'
 import Yx1 from './pages/earphones/Yx1'
 import ItemPage from './pages/item/ItemPage'
 import PaySuccess from './pages/PaySuccess'
+import { SiteDataContext } from './context/useSiteData'
+import Spinner from './components/Spinner'
 
 
-function App() {
+const App = () => {
+
+const {loading} = useContext(SiteDataContext)
+
   return (
+    <>
+    {loading ?  <div className="align h-screen"> <Spinner /> </div>: 
     <div className="align h-screen">
-      <Navbar />
-      <Routes>
-        <Route exact path='/' element={<Home />}></Route>
-        <Route path='/earphoneproductpage' element={<EarphoneProduct />}></Route>
-        <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
-        <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
-        <Route path='/item/:pageId' element={<ItemPage />}></Route>
-        <Route path='/paySuccess' element={<PaySuccess />}></Route>
-      </Routes>
-      <GoToTop />
-      
+    <Navbar />
+    <Routes>
+      <Route exact path='/' element={<Home />}></Route>
+      <Route path='/earphoneproductpage' element={<EarphoneProduct />}></Route>
+      <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
+      <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
+      <Route path='/item/:pageId' element={<ItemPage />}></Route>
+      <Route path='/paySuccess' element={<PaySuccess />}></Route>
+    </Routes>
+    <GoToTop />
+    
 <Footer />
-    </div>
+  </div>
+  }
+  </>
+//     <div className="align h-screen">
+//       <Navbar />
+//       <Routes>
+//         <Route exact path='/' element={<Home />}></Route>
+//         <Route path='/earphoneproductpage' element={<EarphoneProduct />}></Route>
+//         <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
+//         <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
+//         <Route path='/item/:pageId' element={<ItemPage />}></Route>
+//         <Route path='/paySuccess' element={<PaySuccess />}></Route>
+//       </Routes>
+//       <GoToTop />
+      
+// <Footer />
+//     </div>
   );
 }
 

@@ -35,6 +35,7 @@ const SiteDataProvider = ({ children }) => {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [userData, setUserData] = useState([]);
   const [change, setChange] = useState(false);
+  const [loading, setLoading] = useState(true)
   const siteCollectionRef = collection(db, "product");
   const userCollectionRef = collection(db, "users");
 
@@ -46,6 +47,7 @@ const SiteDataProvider = ({ children }) => {
       try {
         const data = await getDocs(siteCollectionRef);
         setSiteData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        setLoading(false)
       } catch (e) {
         alert("Something went wrong");
       }
@@ -56,8 +58,10 @@ const SiteDataProvider = ({ children }) => {
   useEffect(() => {
     const grabUsersData = async () => {
       try {
+        setLoading(true)
         const data = await getDocs(userCollectionRef);
         setUserData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        setLoading(false)
       } catch (e) {
         alert("Error getting user data");
       }
@@ -216,10 +220,11 @@ const SiteDataProvider = ({ children }) => {
     }
   };
 
-  //create checkout session here?
+ 
 const createCheckoutSession = async(...currentUser) => {
 
 const docRef = collection(db, `users/${currentUser[0].uid}/checkout_sessions`);
+
 const {id} = await addDoc(docRef, {
   mode: "payment",
   success_url: 'http://localhost:3000/paySuccess',
@@ -289,7 +294,8 @@ const recentOrders = async (...items) => {
         userData,
         setChange,
         createCheckoutSession,
-        recentOrders
+        recentOrders,
+        loading
       }}
     >
       {children}
