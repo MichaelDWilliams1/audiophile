@@ -54,6 +54,10 @@
 }
 
 @media screen and (max-width: 640px){
+    .headerBackground{
+        background-image: url('./assets/image-header-mobile.jpg');
+    }
+
     .backgroundSvg{
         background-image: url('./assets/pattern-circles-tablet.svg');
         background-size: 100% 100%;
