@@ -8,9 +8,9 @@ const Thumbnail = () => {
     
 
   return (
-    <section className='flex justify-center items-center w-full h-4/6'>
-<div className='flex h-3/6 w-9/12 '>
-    <div className='relative flex align-end w-2/6'>
+    <section className='flex justify-center items-center w-full h-auto md:h-4/6 mb-8 md:mb-0'>
+<div className='flex flex-col md:flex-row h-auto md:h-3/6 w-9/12'>
+    <div className='relative flex align-end h-40 md:h-auto  md:w-2/6 mt-10 md:mt-0'>
         <img className='h-5/6  w-full absolute object-scale-down' src={`${siteData[0]?.home[1].markTwoThumbnail}`}  />
         <div className='flex flex-col justify-end  self-end w-full h-3/4 mr-2 bg-gray-300'>
             <div className=' flex flex-col justify-evenly h-3/6 w-2/4 ml-auto  mr-auto text-center z-10'>
@@ -19,7 +19,7 @@ const Thumbnail = () => {
             </div>
         </div>
     </div>
-    <div className='relative flex w-2/6'>
+    <div className='relative flex w-auto md:w-2/6 h-40 md:h-auto mt-10 md:mt-0'>
         <img className='h-5/6 w-full absolute object-scale-down' src={`${siteData[0]?.home[1].zx9Thumbnail}`} />
      
         <div className='flex flex-col justify-end self-end w-full h-3/4 ml-2 mr-2 bg-gray-300'>
@@ -29,7 +29,7 @@ const Thumbnail = () => {
             </div>
         </div>
     </div>
-    <div className='relative flex w-2/6'>
+    <div className='relative flex w-auto md:w-2/6 mt-10 md:mt-0 h-40 md:h-auto'>
         <img className='h-5/6  w-full absolute object-scale-down' src={`${siteData[0]?.home[1].yx1Thumbnail}`} />
         <div className='flex flex-col justify-end border-2 border-black-400 self-end w-full h-3/4 ml-2 bg-gray-300'>
        <div className=' flex flex-col justify-evenly h-3/6 w-2/4 ml-auto mr-auto text-center z-10'>
