@@ -57,7 +57,6 @@
     .headerBackground{
         background-image: url('./assets/image-header-mobile.jpg');
         background-size: 100%;
-        background-position: 0% -130%;
     }
 
     .backgroundSvg{
