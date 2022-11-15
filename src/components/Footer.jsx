@@ -33,28 +33,28 @@ const Footer = () => {
         </div>
     </div>
 
-    <div className='flex flex-col lg:hidden w-5/6 h-1/5 mt-9 ml-10'>
-        <div className=' flex h-full w-2/4'>
-            <div className='flex flex-col w-5/6 justify-between h-5/6'>
-                <Link to='/'><div className='text-zinc-200 text-4xl font-bold hover:text-orange-600'>audiophile</div></Link>
+    <div className='flex flex-col lg:hidden w-5/6 h-1/5 mt-9 ml-auto mr-auto'>
+        <div className=' flex h-full w-full'>
+            <div className='flex flex-col justify-between h-5/6 m-auto md:m-0'>
+                <Link to='/'><div className='text-zinc-200 text-4xl  font-bold hover:text-orange-600'>audiophile</div></Link>
                 
             </div>
         </div>
-            <div className='mt-12 w-5/6'>
-             <ul className='flex w-full justify-between  text-zinc-200'>
+            <div className='mt-12 w-full'>
+             <ul className='flex w-full flex-col md:flex-row items-center space-y-4  md:justify-between  text-zinc-200'>
                     <Link className='hover:text-orange-600' to='/'><li>HOME</li></Link>
                     <Link className='hover:text-orange-600' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
                     <Link className='hover:text-orange-600' to='/speakerproductpage'><li>SPEAKERS</li></Link>
                     <Link className='hover:text-orange-600' to='/earphoneproductpage'><li>EARPHONES</li></Link>
                 </ul>
             </div>   
-            <div className='w-9/11 mt-10'>
-                <p className='text-zinc-500 text-base'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+            <div className='w-full mt-10'>
+                <p className='text-zinc-500 text-base text-center md:text-left'>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
                 
             </div>
-            <div className='flex mt-20 mb-10 w-auto '>
-                <div className=' w-1/2'><p className='text-zinc-500 text-base'>Copyright 2021. All Rights Reserved</p></div>
-                <div className='text-zinc-200 flex justify-end space-x-4 text-lg w-1/2 '>
+            <div className='flex flex-col md:flex-row mt-12 md:mt-20 mb-10 w-auto space-y-4 md:space-y-0'>
+                <div className='w-full md:w-1/2'><p className='text-zinc-500 text-center md:text-base'>Copyright 2021. All Rights Reserved</p></div>
+                <div className='text-zinc-200 flex justify-center md:justify-end space-x-4 text-lg w-full md:w-1/2'>
                 <i class="uil uil-facebook"></i>
                 <i class="uil uil-twitter"></i>
                 <i class="uil uil-instagram"></i>
