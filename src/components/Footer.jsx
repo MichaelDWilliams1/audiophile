@@ -53,7 +53,7 @@ const Footer = () => {
                 
             </div>
             <div className='flex flex-col md:flex-row mt-12 md:mt-20 mb-10 w-auto space-y-4 md:space-y-0'>
-                <div className='w-full md:w-1/2'><p className='text-zinc-500 text-center md:text-base'>Copyright 2021. All Rights Reserved</p></div>
+                <div className='w-full md:w-1/2'><p className='text-zinc-500 text-center md:text-left md:text-base'>Copyright 2021. All Rights Reserved</p></div>
                 <div className='text-zinc-200 flex justify-center md:justify-end space-x-4 text-lg w-full md:w-1/2'>
                 <i class="uil uil-facebook"></i>
                 <i class="uil uil-twitter"></i>

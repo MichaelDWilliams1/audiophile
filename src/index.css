@@ -64,4 +64,8 @@
         background-size: 100% 100%;
          background-repeat: no-repeat;
      }
+
+     .backgroundImage{
+        background-image: url('./assets/image-speaker-zx7-mobile.jpg');
+     }
 }
