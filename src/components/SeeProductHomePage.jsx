@@ -10,7 +10,7 @@ const SeeProductHomePage = () => {
     <>
     <section  className='flex flex-col h-auto md:h-4/6 w-full'>
         <div className='backgroundSvg bg-orange-500 flex flex-col lg:flex-row  w-5/6 lg:w-9/12 h-full m-auto mt-0 rounded-xl'>
-            <div className='h-1/3 flex items-center md:items-end justify-center lg:justify-end mt-4 lg:h-full md:h-2/5 sm:h-1/3 lg:w-3/6 w-full'>
+            <div className='h-1/3 flex items-center md:items-end justify-center lg:justify-end mt-4 lg:mt-0 lg:h-full md:h-2/5 sm:h-1/3 lg:w-3/6 w-full'>
             <img className='h-40 md:h-4/5 md:object-scale-down' src={`${siteData[0]?.home[2].seeProductZx9}`} />
            
             
