@@ -10,9 +10,9 @@ const BestGear = () => {
         <div className=" flex order-last lg:order-first lg: flex-col justify-center lg:w-2/4">
           <div className="flex flex-col justify-evenly h-auto space-y-5 lg:w-5/6">
             <div className="flex flex-col mt-10 mb-3">
-              <p className="text-4xl sm:m-auto lg:m-0">Bringing you the <span className="text-orange-500 tezt-4xl md:inline hidden lg:hidden">best</span></p>
-              <p className="text-4xl sm:m-auto lg:m-0 flex">
-                <span className="text-orange-500 tezt-4xl md:hidden lg:inline mr-2">best </span> audio
+              <p className="text-4xl sm:m-auto text-center md:text-left lg:m-0">Bringing you the <span className="text-orange-500 tezt-4xl md:inline hidden lg:hidden">best</span></p>
+              <p className="text-4xl sm:m-auto lg:m-0 flex justify-center md:justify-left">
+                <span className="text-orange-500 text-4xl md:hidden lg:inline mr-2">best </span> audio
                 gear
               </p>
             </div>
