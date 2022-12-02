@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-   <footer className='flex h-auto lg:h-1/3 w-full bg-neutral-900'>
+   <footer className='flex h-auto lg:h-2/5 w-full bg-neutral-900'>
     <div className='hidden lg:flex w-5/6 h-5/6 m-auto'>
         <div className=' flex h-full w-2/4'>
             <div className='flex flex-col w-5/6 justify-between h-5/6 m-auto '>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
     </div>
 
-    <div className='flex flex-col lg:hidden w-5/6 h-1/5 mt-9 ml-auto mr-auto'>
+    <div className='flex flex-col lg:hidden w-11/12 h-1/5 mt-9 ml-auto mr-auto'>
         <div className=' flex h-full w-full'>
             <div className='flex flex-col justify-between h-5/6 m-auto md:m-0'>
                 <Link to='/'><div className='text-zinc-200 text-4xl  font-bold hover:text-orange-600'>audiophile</div></Link>
