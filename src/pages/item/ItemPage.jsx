@@ -121,7 +121,7 @@ console.log(`page: ${pageId}`)
               </div>
             </div>
           </section>
-          <section className="w-full h-3/5 mt-20 lg:mt-0 mb-20 lg:mb-0 lg:h-full flex justify-center items-center ">
+          <section className="w-full h-2/5 mt-20 lg:mt-0 mb-20 lg:mb-0 lg:h-full flex justify-center items-center ">
             <div className="w-11/12 lg:w-9/12 h-full lg:h-2/3 flex">
               <div className="h-full flex flex-col justify-between w-1/2 lg:w-5/12 space-y-10 lg:space-y-0">
                 <div className="imageContainer rounded-xl">
@@ -173,7 +173,6 @@ console.log(`page: ${pageId}`)
                 </div>
               </div>
               )}
-            
             </div>
           </section>
           
