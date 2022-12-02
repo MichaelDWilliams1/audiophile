@@ -6,7 +6,7 @@ const BestGear = () => {
 
   return (
     <section className="w-full h-auto lg:h-4/5 flex mb-10">
-      <div className=" flex flex-col lg:flex-row lg:w-9/12 w-5/6 lg:h-4/6 m-auto mt-24">
+      <div className=" flex flex-col lg:flex-row lg:w-9/12 w-11/12 lg:h-4/6 m-auto mt-24">
         <div className=" flex order-last lg:order-first lg: flex-col justify-center lg:w-2/4">
           <div className="flex flex-col justify-evenly h-auto space-y-5 lg:w-5/6">
             <div className="flex flex-col mt-10 mb-3">

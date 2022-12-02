@@ -8,8 +8,8 @@ const Thumbnail = () => {
     
 
   return (
-    <section className='flex justify-center items-center w-full h-auto md:h-4/6 mb-8 md:mb-0'>
-<div className='flex flex-col md:flex-row h-auto md:h-3/6 w-9/12'>
+    <section className='flex justify-center items-center w-full lg:h-4/5 md:h-3/5 mb-8 md:mb-0'>
+<div className='flex flex-col md:flex-row h-auto md:h-3/6 w-11/12 lg:w-9/12'>
     <div className='relative flex align-end h-40 md:h-auto  md:w-2/6 mt-10 md:mt-0'>
         <img className='h-5/6  w-full absolute object-scale-down' src={`${siteData[0]?.home[1].markTwoThumbnail}`}  />
         <div className='flex flex-col justify-end  self-end w-full h-3/4 mr-2 bg-gray-300'>
