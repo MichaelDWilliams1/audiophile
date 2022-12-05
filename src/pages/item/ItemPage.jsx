@@ -52,7 +52,7 @@ console.log(`page: ${pageId}`)
                   src={currentItem[0]?.image.desktop}
                 />
                  <img
-                  className="h-full w-full hiddden md:block lg:hidden"
+                  className="h-full w-full hidden md:block lg:hidden"
                   src={currentItem[0]?.image.tablet}
                 />
                   <img
@@ -60,14 +60,14 @@ console.log(`page: ${pageId}`)
                   src={currentItem[0]?.image.mobile}
                 />
               </div>
-              <div className="flex justify-end items-center w-1/2">
-                <div className="flex flex-col justify-between h-5/6 w-5/6">
-                  <div className="flex">
+              <div className="flex md:justify-end items-center md:w-1/2 border-2">
+                <div className="flex flex-col justify-between h-5/6 md:w-5/6 space-y-4 md:space-y-0">
+                  <div className="flex mt-4 md:mt-0">
                     <div className="w-16 text-zinc-500">N E W</div>
                     <div className="text-zinc-500">P R O D U C T</div>
                   </div>
                   <div className="">
-                    <div className="text-5xl">{currentItem[0]?.name}</div>
+                    <div className="text-4xl md:text-5xl">{currentItem[0]?.name}</div>
                     {/* <div className="text-5xl">SPEAKER</div> */}
                   </div>
                   <div>
@@ -78,7 +78,6 @@ console.log(`page: ${pageId}`)
                   <p className="font-bold">{`$ ${currentItem[0]?.price.toLocaleString()}`}</p>
                   <div className="flex">
                     <div className="bg-gray-200 h-20 w-2/6 flex items-center text-center mr-10">
-                      {/* Need to add some state here */}
                       <div onClick={(e) => addOrSubtract(e)} id='minus' className="w-1/3">-</div>
                       <div className="w-1/3">{addOrSubtractAmountOfItem}</div>
                       <div onClick={(e) => addOrSubtract(e)} id='add' className="w-1/3">+</div>
@@ -95,9 +94,9 @@ console.log(`page: ${pageId}`)
               </div>
             </div>
           </section>
-          <section className="flex lg:h-3/4">
+          <section className="flex lg:h-3/4 mt-14 md:mt-0">
             <div className=" flex flex-col lg:flex-row lg:h-4/6 w-11/12 lg:w-9/12 m-auto space-y-10 lg:space-y-0">
-              <div className=" flex flex-col justify-between w-4/6 md:w-full h-full">
+              <div className=" flex flex-col justify-between md:w-4/6 md:w-full h-full">
                 <div className="md:w-full lg:w-4/5 h-full flex flex-col justify-between">
                   <div className="text-5xl font-bold">Features</div>
                   <div className="leading-7 mt-10">
@@ -109,9 +108,9 @@ console.log(`page: ${pageId}`)
                 </div>
               </div>
               <div className="flex justify-end lg:w-2/6 h-full">
-                <div className="flex lg:flex-col flex-row h-3/4 w-full">
+                <div className="flex flex-col lg:flex-col md:flex-row h-3/4 w-full">
                   <div className="text-5xl md:w-1/2 lg:w-full font-bold">IN THE BOX</div>                      
-                  <div className=" h-full w-1/2 lg:w-full mt-10 leading-10">
+                  <div className=" h-full md:w-1/2 lg:w-full mt-10 leading-10">
                     {currentItem[0]?.includes.map(item =>  <tr>                                                
                       <td className="w-1/4 text-orange-600 font-bold">{`${item.quantity}x`}</td>
                       <td className="w-3/4">{item.item}</td>
@@ -121,9 +120,9 @@ console.log(`page: ${pageId}`)
               </div>
             </div>
           </section>
-          <section className="w-full h-2/5 mt-20 lg:mt-0 mb-20 lg:mb-0 lg:h-full flex justify-center items-center ">
-            <div className="w-11/12 lg:w-9/12 h-full lg:h-2/3 flex">
-              <div className="h-full flex flex-col justify-between w-1/2 lg:w-5/12 space-y-10 lg:space-y-0">
+          <section className="w-full md:h-2/5 mt-20 lg:mt-0 mb-20 lg:mb-0 lg:h-full flex justify-center items-center ">
+            <div className="w-full md:w-11/12 lg:w-9/12 h-full lg:h-2/3 flex flex-col">
+              <div className="h-full flex flex-col justify-between md:w-1/2 lg:w-5/12 space-y-4 md:space-y-10 lg:space-y-0">
                 <div className="imageContainer rounded-xl">
                   <img
                     className="h-full w-full rounded-xl hidden lg:block"
@@ -132,6 +131,10 @@ console.log(`page: ${pageId}`)
                    <img
                     className="h-full w-full rounded-xl hidden md:block lg:hidden"
                     src={currentItem[0]?.gallery.first.tablet}
+                  />
+                    <img
+                    className="h-full w-full rounded-xl md:hidden"
+                    src={currentItem[0]?.gallery.first.mobile}
                   />
                 </div>
                 <div className="imageContainer">
@@ -143,9 +146,13 @@ console.log(`page: ${pageId}`)
                     className="h-full w-full rounded-xl hidden md:block lg:hidden"
                     src={currentItem[0]?.gallery.second.tablet}
                   />
+                    <img
+                    className="h-full w-full rounded-xl md:hidden"
+                    src={currentItem[0]?.gallery.second.mobile}
+                  />
                 </div>
               </div>
-              <div className="h-full w-7/12">
+              <div className="h-full space-y-4 m-auto md:m-0 w-11/12 md:w-7/12">
                 <img
                   className="h-full w-full rounded-xl hidden lg:block"
                   src={currentItem[0]?.gallery.third.desktop}
@@ -153,6 +160,10 @@ console.log(`page: ${pageId}`)
                   <img
                     className="h-full w-full rounded-xl hidden md:block lg:hidden"
                     src={currentItem[0]?.gallery.third.tablet}
+                  />
+                    <img
+                    className="h-full w-full rounded-xl md:hidden"
+                    src={currentItem[0]?.gallery.third.mobile}
                   />
               </div>
             </div>

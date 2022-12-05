@@ -68,4 +68,11 @@
      .backgroundImage{
         background-image: url('./assets/image-speaker-zx7-mobile.jpg');
      }
+     .imageContainer{
+        height: 45%;
+        width: 91.67%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+   
 }
