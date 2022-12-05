@@ -32,21 +32,22 @@ console.log(`page: ${pageId}`)
       console.log(`pageId: ${pageId}`)
      console.log(`current: ${currentItem}`)
      console.log(siteData[0])
+     console.log(currentItem[0].new)
   
     return (
         <> 
         {currentItem === undefined ? '' :
         <>
-          <section className="md:mt-10 md:mb-20 lg:h-full w-full">
+          <section className="mt-5 md:mt-10 md:mb-20 lg:h-full w-full">
             <div
               onClick={navigateBack}
-              className="k w-11/12 lg:w-9/12 h-1/6 md:mb-10 flex items-center md:m-auto lg:m-auto cursor-pointer"
+              className="w-11/12 lg:w-9/12 h-1/6 mb-5 md:mb-10 flex items-center m-auto lg:m-auto cursor-pointer"
             >
               Go back
             </div>
     
             <div className=" flex flex-col md:flex-row w-11/12 lg:w-9/12 m-auto">
-              <div className=" w-1/2 h-full">
+              <div className="md:w-1/2 h-full">
                 <img
                   className="h-full w-full hidden lg:block"
                   src={currentItem[0]?.image.desktop}
@@ -60,12 +61,15 @@ console.log(`page: ${pageId}`)
                   src={currentItem[0]?.image.mobile}
                 />
               </div>
-              <div className="flex md:justify-end items-center md:w-1/2 border-2">
+              <div className="flex md:justify-end items-center md:w-1/2">
                 <div className="flex flex-col justify-between h-5/6 md:w-5/6 space-y-4 md:space-y-0">
+                  { currentItem[0]?.new ? 
                   <div className="flex mt-4 md:mt-0">
                     <div className="w-16 text-zinc-500">N E W</div>
                     <div className="text-zinc-500">P R O D U C T</div>
-                  </div>
+                  </div> :
+                  <div></div>
+}
                   <div className="">
                     <div className="text-4xl md:text-5xl">{currentItem[0]?.name}</div>
                     {/* <div className="text-5xl">SPEAKER</div> */}
@@ -121,7 +125,7 @@ console.log(`page: ${pageId}`)
             </div>
           </section>
           <section className="w-full md:h-2/5 mt-20 lg:mt-0 mb-20 lg:mb-0 lg:h-full flex justify-center items-center ">
-            <div className="w-full md:w-11/12 lg:w-9/12 h-full lg:h-2/3 flex flex-col">
+            <div className="w-full md:w-11/12 lg:w-9/12 h-full lg:h-2/3 flex flex-col md:flex-row">
               <div className="h-full flex flex-col justify-between md:w-1/2 lg:w-5/12 space-y-4 md:space-y-10 lg:space-y-0">
                 <div className="imageContainer rounded-xl">
                   <img
@@ -152,7 +156,7 @@ console.log(`page: ${pageId}`)
                   />
                 </div>
               </div>
-              <div className="h-full space-y-4 m-auto md:m-0 w-11/12 md:w-7/12">
+              <div className="h-full space-y-4 md:space-y-0 m-auto md:m-0 w-11/12 md:w-7/12">
                 <img
                   className="h-full w-full rounded-xl hidden lg:block"
                   src={currentItem[0]?.gallery.third.desktop}
@@ -168,19 +172,19 @@ console.log(`page: ${pageId}`)
               </div>
             </div>
           </section>
-          <section className="h-3/5 lg:h-4/5 flex flex-col justify-evenly items-center">
-            <div className="text-4xl">YOU MAY ALSO LIKE</div>
-            <div className=" flex justify-between h-3/4 w-11/12 lg:w-9/12">
+          <section className="md:h-3/5 lg:h-4/5 flex flex-col justify-evenly items-center">
+            <div className="text-3xl md:text-4xl mb-4 md:m-0">YOU MAY ALSO LIKE</div>
+            <div className="flex flex-col md:flex-row justify-between h-3/4 w-11/12 lg:w-9/12 space-y-10 md:space-y-0">
                 {currentItem[0]?.others.map(item =>  
-                <div className=" h-full w-4/12 mr-5">
+                <div className=" h-full w-full md:w-4/12 mr-5">
                 <div className=" h-4/6 w-full">
                   <img className="h-full w-full hidden lg:block" src={item?.image.desktop} />
                   <img className="h-full w-full hidden md:block lg:hidden" src={item?.image.tablet} />
                   <img className="h-full w-full md:hidden" src={item?.image.mobile} />
                 </div>
-                <div className=" flex flex-col items-center h-2/6 w-full">
+                <div className=" flex flex-col items-center md:h-1/3 w-full space-y-4 md:space-y-0 mt-4 md:mt-0">
                   <div className="h-1/2 w-full text-3xl flex items-center justify-center">{item.name}</div>
-                  <button className="h-1/3 lg:h-1/2 w-3/4 lg:w-2/4 bg-orange-400">SEE PRODUCT</button>
+                  <button className="h-12 md:h-1/3 lg:h-1/2 w-1/2 md:w-3/4 lg:w-2/4 bg-orange-400">SEE PRODUCT</button>
                 </div>
               </div>
               )}
