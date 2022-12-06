@@ -39,7 +39,7 @@ const SignIn = ({modalPopUp}) => {
 
     return(
         <>
-        <section style={{display: !hasAccount && 'none'}} className='absolute ht-screen w-screen flex  bg-zinc-900/90'>
+        <section style={{display: !hasAccount && 'none'}} className='absolute ht-screen w-screen flex bg-zinc-900/90 border-2'>
                 <div id='closeModal' onClick={(e)=>modalPopUp(e)} className='h-screen w-screen flex justify-end items-center'>
                     <div className=' lg:h-3/5 w-72 h-2/5 flex justify-center items-center m-auto rounded-lg bg-white'>
                         <div className='signinContentContainer flex flex-col justify-evenly '>

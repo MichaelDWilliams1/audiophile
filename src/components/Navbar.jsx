@@ -71,10 +71,12 @@ if(toggleHamburgerMenu === 'visible'){
   return (
     <>
     <div className='flex h-16 md:h-24 bg-neutral-900 text-white'>
-     <div className='lg:hidden md:mt-10 md:ml-20 mt-5 w-1/4 md:w-auto flex justify-center md:justify-start'>
+      <div className='flex h-16 md:h-24 w-full m-auto'>
+        <div className='flex h-16 md:h-24 w-5/6 m-auto'>
+     <div className='lg:hidden md:mt-10 md:ml-0 mt-5 w-1/4 md:w-auto flex justify-start'>
       <i onClick={toggleMenu} className="uil uil-bars md:hover:text-orange-600"></i>
       </div>
-    <Link className='ml-auto mr-auto md:ml-0 md:mr-0 w-2/4 md:w-auto' to='/'><div className='flex justify-center md:justify-start h-1/2 mt-5 w-auto md:mt-7  md:ml-10 lg:ml-32 text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
+    <Link className='ml-auto mr-auto md:ml-0 md:mr-0 w-2/4 md:w-auto' to='/'><div className='flex justify-center md:justify-start h-1/2 mt-5 w-auto md:mt-7 md:ml-10 lg:ml-0 text-2xl font-bold items-center hover:text-orange-600'>audiophile</div></Link>
         <nav className='md:flex w-auto h-1/2 m-auto mt-7 hidden'>
             <div className='lg:flex lg:w-full hidden lg:visible' >
                 <ul className='flex items-center space-x-16'>
@@ -106,12 +108,13 @@ if(toggleHamburgerMenu === 'visible'){
             className='bg-orange-600 rounded-lg h-1/5 w-20 mt-5 md:w-24 md:h-2/5 md:mt-7 hidden md:flex justify-center items-center cursor-pointer hover:bg-orange-500'>
               {signInOrProfile}
           </div> 
-        <i onClick={modalCartPopUpOpen} className="flex justify-center md:justify-start w-1/4 md:w-auto text-4xl mt-3 ml-3 md:ml-10 md:mt-7 md:mr-20 uil uil-shopping-cart relative hover:text-orange-600"><CartItemsCounter /></i>
-       
+        <i onClick={modalCartPopUpOpen} className="flex justify-end md:justify-start w-1/4 md:w-auto text-4xl mt-3 ml-3 md:ml-10 md:mt-7 md:mr-0 uil uil-shopping-cart relative hover:text-orange-600"><CartItemsCounter /></i>
+        </div>
         {modalSignIn && <SignIn modalPopUp={modalPopUp} />}
         {modalItemsInCart && <CheckoutPreview modalCartPopUpClose={modalCartPopUpClose} />}
+    
     </div>
-   
+    </div>
     </>
   )
 }
