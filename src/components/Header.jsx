@@ -10,7 +10,7 @@ const {siteData} = useContext(SiteDataContext)
   return (
     <div className='headerBackground bg-neutral-900 text-gray-50 h-full md:h-5/6'>
         <hr className='w-5/6 ml-auto mr-auto border-1 border-white-500'></hr>
-        <header className='flex w-full md:justify-center lg:justify-start md:items-center md:w-5/6 lg:m-auto h-full'>
+        <header className='flex w-full md:justify-center lg:justify-start md:items-center md:w-full lg:w-5/6 lg:m-auto h-full'>
 <div className='h-82 flex md:items-center md:justify-center md:h-full'>
     <div className='background flex flex-col justify-around md:justify-around h-4/5 m-auto md:h-2/4 md:w-5/6 lg:ml-0'>
        <section className='lg:ml-0 flex md:mr-16 md:justify-start w-full md:w-auto'>

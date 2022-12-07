@@ -22,18 +22,18 @@ const CartItems = ({ currentUser }) => {
           key={index}
           className="flex mt-4 h-1/6 overflow-auto"
         >
-          <div className=" w-1/5">
+          <div className="w-1/5">
             <img className="h-full w-full object-cover" src={item.image} />
           </div>
           <div className="w-2/5 flex flex-col">
-            <div className="text-black h-1/2 text-sm font-bold flex items-center pl-4">
+            <div className="text-black md:h-1/2 text-xs md:text-sm font-bold flex items-center pl-4">
               {item.name}
             </div>
-            <div className="text-black h-1/2 text-sm flex items-center pl-4">
+            <div className="text-black h-auto  md:h-1/2 text-xs md:text-sm flex items-center pl-4">
               ${item.price}
             </div>
           </div>
-          <div className="h-full w-2/5 text-black flex items-center">
+          <div className="md:h-full w-2/5 text-black flex items-center">
             <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               -
             </div>
@@ -73,7 +73,7 @@ const CartItems = ({ currentUser }) => {
       : currentUser[0]?.currentItemsInCart.length;
 
   return (
-    <section className=" h-4/5 w-5/6 m-auto">
+    <section className=" h-full w-5/6 m-auto flex flex-col justify-center mt-2 md:mt-0">
       <section className="flex justify-between h-auto">
         <div className="text-black">{`CART (${inCartCount})`}</div>
         <div onClick={removeAllFromCart} className="text-black hover:text-red-600 cursor-pointer">Remove All</div>
@@ -85,7 +85,7 @@ const CartItems = ({ currentUser }) => {
         <div className="text-black">Total</div>
         <div className="text-black">{totalCost}</div>
       </section>
-      <button onClick={()=>createCheckoutSession(currentUser[0])}  className="bg-orange-600 w-full h-16 mt-4">CHECKOUT</button>
+      <button onClick={()=>createCheckoutSession(currentUser[0])}  className="bg-orange-600 w-full h-16 mt-4 mb-4">CHECKOUT</button>
     </section>
   );
 };
