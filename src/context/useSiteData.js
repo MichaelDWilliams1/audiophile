@@ -57,8 +57,8 @@ const SiteDataProvider = ({ children }) => {
 
   useEffect(() => {
     const grabUsersData = async () => {
+
       try {
-        
         const data = await getDocs(userCollectionRef);
         setUserData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         setLoading(false)
@@ -67,6 +67,7 @@ const SiteDataProvider = ({ children }) => {
         alert("Error getting user data");
       }
     };
+    
     grabUsersData();
     
   }, [change]);

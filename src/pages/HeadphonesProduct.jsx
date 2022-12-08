@@ -68,11 +68,11 @@ const navigate = useNavigate();
             <div className=" flex justify-end items-center lg:w-1/2">
             <div className="flex flex-col justify-evenly h-4/6 lg:w-5/6 space-y-6">
                     <div className="text-center lg:text-left mt-6 lg:mt-0">
-                        <div className="text-4xl md:text-5xl">XX99 MARK II</div>
+                        <div className="text-4xl md:text-5xl">XX59</div>
                         <div className="text-4xl md:text-5xl">HEADPHONES</div>
                     </div>
                     <div>
-                        <p className="text-md text-center lg:text-left">The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
+                        <p className="text-md text-center lg:text-left">Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                     </div>
                    <Link className="flex justify-center lg:justify-start" to={`/item/${siteData[0]?.product[1].slug}`}> <button className="md:w-2/6 w-5/6 h-20 bg-orange-600 hover:bg-orange-500 text-zinc-200">SEE PRODUCT</button></Link>
                 </div>

@@ -32,18 +32,17 @@ console.log(`page: ${pageId}`)
       console.log(`pageId: ${pageId}`)
      console.log(`current: ${currentItem}`)
      console.log(siteData[0])
-     console.log(currentItem[0].new)
+     console.log(currentItem[0].image.mobile)
   
     return (
         <> 
         {currentItem === undefined ? '' :
         <>
-          <section className="mt-5 md:mt-10 md:mb-20 lg:h-full w-full">
+          <section className="mt-5 md:mt-10 md:mb-20 lg:h-full w-full border-2">
             <div
-              onClick={navigateBack}
-              className="w-11/12 lg:w-9/12 h-1/6 mb-5 md:mb-10 flex items-center m-auto lg:m-auto cursor-pointer"
-            >
-              Go back
+             
+              className="w-11/12 lg:w-3/4 h-1/6 mb-5 md:mb-10 lg:mb-0 flex items-center m-auto lg:ml-auto lg:mr-auto"
+            ><p onClick={navigateBack} className="z-10 hover:text-orange-600 hover:cursor-pointer">Go Back</p>
             </div>
     
             <div className=" flex flex-col md:flex-row w-11/12 lg:w-9/12 m-auto">
@@ -102,9 +101,12 @@ console.log(`page: ${pageId}`)
             <div className=" flex flex-col lg:flex-row lg:h-4/6 w-11/12 lg:w-9/12 m-auto space-y-10 lg:space-y-0">
               <div className=" flex flex-col justify-between md:w-4/6 md:w-full h-full">
                 <div className="md:w-full lg:w-4/5 h-full flex flex-col justify-between">
-                  <div className="text-5xl font-bold">Features</div>
+                  <div className="text-5xl font-bold space-y-5">Features</div>
                   <div className="leading-7 mt-10">
                   {currentItem[0]?.features}
+                  </div>
+                  <div className="leading-7 mt-10">
+                  {currentItem[0]?.featuresSecond}
                   </div>
                   <div className="leading-7">
                   
