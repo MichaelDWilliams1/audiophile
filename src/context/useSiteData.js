@@ -58,15 +58,17 @@ const SiteDataProvider = ({ children }) => {
   useEffect(() => {
     const grabUsersData = async () => {
       try {
-        setLoading(true)
+        
         const data = await getDocs(userCollectionRef);
         setUserData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         setLoading(false)
+        console.log('here')
       } catch (e) {
         alert("Error getting user data");
       }
     };
     grabUsersData();
+    
   }, [change]);
 
   const newUserRegistation = async (e, name, email, password) => {
@@ -154,7 +156,8 @@ const SiteDataProvider = ({ children }) => {
     }
   };
 
-  const updateItemCount = async (e, index, name, price, image, amount, id) => {
+  const updateItemCount = async (e, index, name, price, image, amount, id, payId) => {
+    console.log(payId)
     if (e.target.id === "minus") {
       if (amount === 1) return;
       amount = amount - 1;
@@ -179,6 +182,7 @@ const SiteDataProvider = ({ children }) => {
           image: image,
           amount: amount,
           id: id,
+          payId: payId
         }),
       });
 
@@ -200,14 +204,15 @@ const SiteDataProvider = ({ children }) => {
           docSnap.data().currentItemsInCart[index]
         ),
       });
-
       setChange((prev) => !prev);
     } catch (error) {
       alert(error.message);
     }
+
   };
 
   const removeAllFromCart = async () => {
+    setLoading(false)
     try {
       const userRef = await doc(db, "users", auth.currentUser.uid);
 
@@ -219,12 +224,12 @@ const SiteDataProvider = ({ children }) => {
       console.log(e.message);
     }
   };
-
+ 
  
 const createCheckoutSession = async(...currentUser) => {
-
+setLoading(true)
 const docRef = collection(db, `users/${currentUser[0].uid}/checkout_sessions`);
-
+console.log(currentUser[0].currentItemsInCart[0].amount)
 const {id} = await addDoc(docRef, {
   mode: "payment",
   success_url: 'http://localhost:3000/paySuccess',
@@ -248,9 +253,9 @@ try{
           stripe.redirectToCheckout({sessionId})
     }
   }, 
-
-)} catch(error){
-  alert(error.mesage)
+)
+} catch(error){
+  console.log(`error message: ${error.mesage}`)
 }
 }
 
@@ -295,7 +300,7 @@ const recentOrders = async (...items) => {
         setChange,
         createCheckoutSession,
         recentOrders,
-        loading
+        loading,
       }}
     >
       {children}

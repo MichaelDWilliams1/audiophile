@@ -34,13 +34,13 @@ const CartItems = ({ currentUser }) => {
             </div>
           </div>
           <div className="md:h-full w-2/5 text-black flex items-center">
-            <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               -
             </div>
             <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               {item.amount}
             </div>
-            <div id='add' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='add' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
               +
             </div>
             <i
