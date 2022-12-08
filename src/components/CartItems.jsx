@@ -3,7 +3,7 @@ import { SiteDataContext } from "../context/useSiteData";
 
 
 const CartItems = ({ currentUser }) => {
-  const {addToCart, removeFromCart, removeAllFromCart, updateItemCount, createCheckoutSession} = useContext(SiteDataContext);
+  const {addToCart, removeFromCart, removeAllFromCart, updateItemCount, createCheckoutSession, loading} = useContext(SiteDataContext);
 
   const items =
     currentUser[0] === undefined ? (
@@ -30,17 +30,17 @@ const CartItems = ({ currentUser }) => {
               {item.name}
             </div>
             <div className="text-black h-auto  md:h-1/2 text-xs md:text-sm flex items-center pl-4">
-              ${item.price}
+              ${item.price.toLocaleString()}
             </div>
           </div>
           <div className="md:h-full w-2/5 text-black flex items-center">
-            <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='minus' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly hover:cursor-pointer hover:text-red-800 font-bold">
               -
             </div>
-            <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly font-bold">
               {item.amount}
             </div>
-            <div id='add' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly">
+            <div id='add' onClick={(e)=>updateItemCount(e, index, item.name, item.price, item.image, item.amount, item.id, item.payId)} className="h-4/6 w-1/3 bg-gray-200 text-center items-center flex justify-evenly hover:cursor-pointer hover:text-green-800 font-bold">
               +
             </div>
             <i
@@ -83,7 +83,7 @@ const CartItems = ({ currentUser }) => {
 
       <section className="flex justify-between mt-4">
         <div className="text-black">Total</div>
-        <div className="text-black">{totalCost}</div>
+        <div className="text-black">{`$${totalCost.toLocaleString()}`}</div>
       </section>
       <button onClick={()=>createCheckoutSession(currentUser[0])}  className="bg-orange-600 w-full h-16 mt-4 mb-4">CHECKOUT</button>
     </section>

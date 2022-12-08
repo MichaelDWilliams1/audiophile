@@ -82,9 +82,9 @@ console.log(`page: ${pageId}`)
                   <p className="font-bold">{`$ ${currentItem[0]?.price.toLocaleString()}`}</p>
                   <div className="flex">
                     <div className="bg-gray-200 h-20 w-2/6 flex items-center text-center mr-10">
-                      <div onClick={(e) => addOrSubtract(e)} id='minus' className="w-1/3">-</div>
-                      <div className="w-1/3">{addOrSubtractAmountOfItem}</div>
-                      <div onClick={(e) => addOrSubtract(e)} id='add' className="w-1/3">+</div>
+                      <div onClick={(e) => addOrSubtract(e)} id='minus' className="w-1/3 hover:cursor-pointer hover:text-red-800 font-bold">-</div>
+                      <div className="w-1/3 font-bold">{addOrSubtractAmountOfItem}</div>
+                      <div onClick={(e) => addOrSubtract(e)} id='add' className="w-1/3 hover:cursor-pointer hover:text-green-800 font-bold">+</div>
                     </div>
                     <button
                       onClick={() => addToCart(addOrSubtractAmountOfItem, currentItem[0])}

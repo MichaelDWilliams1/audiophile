@@ -21,7 +21,7 @@ const SpeakersProduct = () => {
                 <img className="h-full w-full md:hidden" src={siteData[0]?.product[5]?.categoryImage.mobile} />
             </div>
             <div className="flex justify-end items-center w-full lg:w-1/2">
-                <div className="flex flex-col justify-between h-4/6 lg:w-5/6 space-y-6">
+                <div className="flex flex-col justify-between lg:w-5/6 space-y-6">
                     <div className="flex justify-center lg:justify-start mt-6 lg:mt-0">
                     <div className='w-16 text-zinc-500'>N E W</div>
                     <div className='text-zinc-500' >P R O D U C T</div>
@@ -37,9 +37,9 @@ const SpeakersProduct = () => {
                 </div>
            </div>
         </div>
-        <div  className="flex flex-col lg:flex-row w-11/12 lg:w-9/12 m-auto mt-24">
-            <div className="lg:w-1/2 h-1/2 lg:h-full order-1 lg:order-first">
-            <div className="flex flex-col justify-between h-4/6 lg:w-5/6 space-y-6">
+        <div  className="flex flex-col items-center lg:flex-row w-11/12 lg:w-9/12 m-auto mt-24">
+            <div className="lg:w-1/2 items-center order-1 lg:order-first">
+            <div className="flex flex-col justify-between lg:w-5/6 space-y-6">
                     <div className="text-center lg:text-left mt-6 lg:mt-0">
                         <div className="text-4xl md:text-5xl">ZX7</div>
                         <div className="text-4xl md:text-5xl">SPEAKER</div>
