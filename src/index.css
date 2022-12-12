@@ -31,6 +31,22 @@
     height: auto;
     width: 90%;
 }
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+.dropDownMenu{
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
 
 @media screen and (max-width: 1024px){
     .headerBackground{

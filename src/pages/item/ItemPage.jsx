@@ -38,7 +38,7 @@ console.log(`page: ${pageId}`)
         <> 
         {currentItem === undefined ? '' :
         <>
-          <section className="mt-5 md:mt-10 md:mb-20 lg:h-full w-full border-2">
+          <section className="mt-5 md:mt-10 md:mb-20 lg:h-full w-full">
             <div
              
               className="w-11/12 lg:w-3/4 h-1/6 mb-5 md:mb-10 lg:mb-0 flex items-center m-auto lg:ml-auto lg:mr-auto"

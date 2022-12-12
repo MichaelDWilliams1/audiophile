@@ -90,9 +90,9 @@ if(toggleHamburgerMenu === 'visible'){
 
             <div className=''></div>
         </nav>
-        <motion.nav animate={{width: '200'}}   className='flex h-1/2 m-auto mt-7 absolute top-6 md:top-14 w-60'>
+        <motion.nav className='flex mt-7 left-1 top-7 absolute md:top-14'>
             <div className={`flex lg:w-3/6 lg:hidden ${toggleHamburgerMenu} w-60`} >
-                <ul className='flex flex-col items-center space-y-1  w-60 md:mt-3 mt-0'>
+                <ul className='dropDownMenu flex flex-col items-center space-y-1  w-60 md:mt-3 mt-0'>
                     <Link className='hover:text-orange-600 hover:bg-white bg-orange-600 w-60 h-10 rounded-md flex justify-center items-center border-2' to='/' ><li className='focus:text-orange-600'>HOME</li></Link>
                     <Link className='hover:text-orange-600 hover:bg-white bg-orange-600 w-60 h-10 rounded-md flex justify-center items-center border-2' to='/headphonesproductpage'><li>HEADPHONES</li></Link>
                     <Link className='hover:text-orange-600 hover:bg-white bg-orange-600 w-60 h-10 rounded-md flex justify-center items-center border-2' to='/speakerproductpage'><li>SPEAKERS</li></Link>
@@ -115,6 +115,7 @@ if(toggleHamburgerMenu === 'visible'){
     
     </div>
     </div>
+  
     </>
   )
 }
