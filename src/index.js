@@ -7,7 +7,7 @@ import { SiteDataProvider } from './context/useSiteData';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router>
+<Router>
 <SiteDataProvider>
     <App />
 </SiteDataProvider>

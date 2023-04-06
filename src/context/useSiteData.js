@@ -129,7 +129,6 @@ const SiteDataProvider = ({ children }) => {
   };
 
   //The section below will be all about adding items to the cart.
-  // ~Come back and save cart items to server~
   const addToCart = async (amount, ...item) => {
     console.log("came");
     console.log(item[0])

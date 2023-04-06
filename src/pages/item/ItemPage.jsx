@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { SiteDataContext } from "../../context/useSiteData";
 import Thumbnail from "../../components/Thumbnail";
 import BestGear from "../../components/BestGear";
@@ -29,10 +29,6 @@ console.log(`page: ${pageId}`)
       }
      
       const currentItem = siteData[0]?.product.filter((item) => item.slug === pageId)
-      console.log(`pageId: ${pageId}`)
-     console.log(`current: ${currentItem}`)
-     console.log(siteData[0])
-     console.log(currentItem[0].image.mobile)
   
     return (
         <> 
@@ -186,7 +182,7 @@ console.log(`page: ${pageId}`)
                 </div>
                 <div className=" flex flex-col items-center md:h-1/3 w-full space-y-4 md:space-y-0 mt-4 md:mt-0">
                   <div className="h-1/2 w-full text-3xl flex items-center justify-center">{item.name}</div>
-                  <button className="h-12 md:h-1/3 lg:h-1/2 w-1/2 md:w-3/4 lg:w-2/4 bg-orange-400">SEE PRODUCT</button>
+                  <Link className="flex justify-center h-12 md:h-1/3 lg:h-1/2 w-1/2 md:w-3/4 lg:w-2/4 bg-orange-400" to={`/item/${item?.slug}`}><button className="h-full w-full">SEE PRODUCT</button></Link>
                 </div>
               </div>
               )}

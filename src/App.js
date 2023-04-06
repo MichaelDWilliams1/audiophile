@@ -42,20 +42,6 @@ const {loading} = useContext(SiteDataContext)
   </div>
   }
   </>
-//     <div className="align h-screen">
-//       <Navbar />
-//       <Routes>
-//         <Route exact path='/' element={<Home />}></Route>
-//         <Route path='/earphoneproductpage' element={<EarphoneProduct />}></Route>
-//         <Route path='/headphonesproductpage' element={<HeadphonesProduct />}></Route>
-//         <Route path='/speakerproductpage' element={<SpeakersProduct />}></Route>
-//         <Route path='/item/:pageId' element={<ItemPage />}></Route>
-//         <Route path='/paySuccess' element={<PaySuccess />}></Route>
-//       </Routes>
-//       <GoToTop />
-      
-// <Footer />
-//     </div>
   );
 }
 
